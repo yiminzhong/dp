@@ -12,7 +12,7 @@ abstract class Controller extends BaseController {
     public $user;
     //视图
     public function render($viewName) {
-        return view()->make('admin/' . $viewName);
+        return view()->make('admin.' . $viewName);
     }
 
     protected function getAdminUserName()
