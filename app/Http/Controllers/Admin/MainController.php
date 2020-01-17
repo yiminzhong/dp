@@ -15,16 +15,16 @@ class MainController extends Controller
         $admin      = $this->getCurrentUser();
 
         $adminId    = $admin->id;
-//        $menus      = $admin->getPrivilegeMenus();
-
+        $menus      = $admin->getPrivilegeMenus();
+        dd($menus);
         $live=[];
 
-        return $this->render('index')->with('admin', $admin)
+        return $this->render('index')->with('admin', $admin)->with('menus', $menus)
 //            ->with('uid', $adminId)
 //
 //            ->with('live', json_encode($live))
 //            ->with('admin_group_name', $admin->group->group_name)
-//            ->with('menus', $menus)
+//
             ;
     }
 
