@@ -15,9 +15,9 @@ Route::any('login',  'MainController@login')->name('login');
 Route::get('logout', array('as' => 'MainController@logout', 'uses' => "MainController@logout"));
 
 Route::group(array('middleware' => ['auth:admin']), function () {
-
     // 首页相关
-
     Route::get('', array('as' => 'MainController@index', 'uses' => "MainController@index"));
     Route::any('welcome', array('as' => 'MainController@welcome', 'uses' => 'MainController@welcome') );
+
+    Route::any('error/logs',array('as' => 'LogController@errorlog', 'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
 });

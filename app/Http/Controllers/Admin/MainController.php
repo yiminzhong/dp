@@ -15,8 +15,9 @@ class MainController extends Controller
         $admin      = $this->getCurrentUser();
 
         $adminId    = $admin->id;
+
         $menus      = $admin->getPrivilegeMenus();
-        dd($menus);
+
         $live=[];
 
         return $this->render('index')->with('admin', $admin)->with('menus', $menus)

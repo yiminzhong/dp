@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="Bookmark" href="{{asset('/favicon.ico')}}" >
+    <link rel="Bookmark" href="/favicon.ico" >
     <link rel="Shortcut Icon" href="/favicon.ico" />
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{{asset('static/lib/html5shiv.js')}}"></script>
@@ -24,7 +24,7 @@
     <![endif]-->
 
 
-    <title>H-ui.admin v3.1</title>
+    <title>龙泽三郎后台系统</title>
     <meta name="keywords" content="龙泽三郎后台系统">
     <meta name="description" content="龙泽三郎后台系统 admin v3.1 ">
 </head>

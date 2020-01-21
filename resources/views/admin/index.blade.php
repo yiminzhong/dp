@@ -135,6 +135,18 @@
                 </ul>
             </dd>
         </dl>
+        @foreach($menus as $k => $v)
+            <dl id="menu-system">
+                <dt><i class="Hui-iconfont">{!! $v['icon'] !!}</i> {{$v['title']}}<i class="Hui-iconfont menu_dropdown-arrow">{!! $v['icon2'] !!}</i></dt>
+                <dd>
+                    <ul>
+                        @foreach($v['child'] as $k1 => $v1)
+                            <li><a data-href="{{$v1['url']}}" data-title="{{$v1['title']}}" href="javascript:void(0)">{{$v1['title']}}</a></li>
+                        @endforeach
+                    </ul>
+                </dd>
+            </dl>
+        @endforeach
     </div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
