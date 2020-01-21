@@ -11,7 +11,7 @@ return [
                 [
                     'title' => '系统日志',
                     'action' => 'LogController@errorlog',
-                    'url' => 'error/logs',
+                    'url' => 'error_logs',
                     'child' => [
                         [
                             'title' => '添加配置',
@@ -23,9 +23,9 @@ return [
                     ]
                 ],
                 [
-                    'title' => '配置管理2',
-                    'action' => 'ConfigureController@index',
-                    'url' => 'index',
+                    'title' => '错误日志',
+                    'action' => 'LogController@log_index',
+                    'url' => 'log_index',
                     'child' => [
                         [
                             'title' => '添加配置',
