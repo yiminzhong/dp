@@ -20,36 +20,55 @@
 		<span class="l">
 		<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
 		</span>
-            <span class="r">共有数据：<strong>54</strong> 条</span>
+            <span class="r">共有数据：<strong>111</strong> 条</span>
         </div>
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
             <tr class="text-c">
                 <th width="25"><input type="checkbox" name="" value=""></th>
                 <th width="80">ID</th>
-                <th width="100">类型</th>
-                <th>内容</th>
                 <th width="17%">用户名</th>
+                <th width="100">描述</th>
                 <th width="120">客户端IP</th>
-                <th width="120">时间</th>
+                <th width="100">时间</th>
+                <th width="100">控制器</th>
+                <th width="100">行为</th>
+                <th width="100">状态</th>
+
                 <th width="70">操作</th>
+
             </tr>
             </thead>
             <tbody>
-            <tr class="text-c">
-                <td><input type="checkbox" value="" name=""></td>
-                <td>15686</td>
-                <td>1</td>
-                <td>登录成功!</td>
-                <td>admin</td>
-                <td>61.233.7.80</td>
-                <td>2014-6-11 11:11:42</td>
-                <td><a title="详情" href="javascript:;" onclick="system_log_show(this,'10001')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe665;</i></a>
-                    <a title="删除" href="javascript:;" onclick="system_log_del(this,'10001')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-            </tr>
+            @foreach ($data['lists'] as $item)
+                <tr class="text-c">
+                    <td><input type="checkbox" value="{{ $item->id }}" name=""></td>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->username }}</td>
+                    <td>{{ $item->title }}</td>
+                    <td>{{ $item->client_ip }}</td>
+                    <td>{{ $item->created_at }}</td>
+                    <td>{{ $item->controller }}</td>
+                    <td>{{ $item->action }}</td>
+                    <td>
+                        @if ($item->status == 1)
+                            ok
+                        @else
+                            ok2
+                        @endif</td>
+                    <td><a title="详情" href="javascript:;" onclick="system_log_show(this,'10001')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe665;</i></a>
+                        <a title="删除" href="javascript:;" onclick="system_log_del(this,'10001')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
-        <div id="pageNav" class="pageNav"></div>
+
+        <div id="pageNav" class="pageNav">
+
+
+        </div>
+
+        {!! $data['lists']->links('vendor.pagination.bootstrap5') !!}
     </div>
 
 
@@ -58,40 +77,40 @@
 
 @section('script')
     <script type="text/javascript">
-        $('.table-sort').dataTable({
-            "lengthMenu":false,//显示数量选择
-            "bFilter": false,//过滤功能
-            "bPaginate": false,//翻页信息
-            "bInfo": false,//数量信息
-            "aaSorting": [[ 1, "desc" ]],//默认第几个排序
-            "bStateSave": true,//状态保存
-            "aoColumnDefs": [
-                //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-                {"orderable":false,"aTargets":[0,7]}// 制定列不参与排序
-            ]
-        });
-
-        /*查看日志*/
-        function system_log_show(){
-
-        }
-        /*日志-删除*/
-        function system_log_del(obj,id){
-            layer.confirm('确认要删除吗？',function(index){
-                $.ajax({
-                    type: 'POST',
-                    url: '',
-                    dataType: 'json',
-                    success: function(data){
-                        $(obj).parents("tr").remove();
-                        layer.msg('已删除!',{icon:1,time:1000});
-                    },
-                    error:function(data) {
-                        console.log(data.msg);
-                    },
-                });
-            });
-        }
+        // $('.table-sort').dataTable({
+        //     "lengthMenu":false,//显示数量选择
+        //     "bFilter": false,//过滤功能
+        //     "bPaginate": false,//翻页信息
+        //     "bInfo": false,//数量信息
+        //     "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+        //     "bStateSave": true,//状态保存
+        //     "aoColumnDefs": [
+        //         //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+        //         {"orderable":false,"aTargets":[0,7]}// 制定列不参与排序
+        //     ]
+        // });
+        //
+        // /*查看日志*/
+        // function system_log_show(){
+        //
+        // }
+        // /*日志-删除*/
+        // function system_log_del(obj,id){
+        //     layer.confirm('确认要删除吗？',function(index){
+        //         $.ajax({
+        //             type: 'POST',
+        //             url: '',
+        //             dataType: 'json',
+        //             success: function(data){
+        //                 $(obj).parents("tr").remove();
+        //                 layer.msg('已删除!',{icon:1,time:1000});
+        //             },
+        //             error:function(data) {
+        //                 console.log(data.msg);
+        //             },
+        //         });
+        //     });
+        // }
     </script>
 @stop
 
