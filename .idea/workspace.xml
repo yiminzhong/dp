@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Admin/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/identity_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap5.blade.php" afterDir="false" />
+    <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="超级管理员">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IdentityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminRoute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Admin/Identity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_auth_privileges.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_role_select.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/error/403.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/error/missing.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/identity_add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/identity_edite.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/main_jump.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/admin/acl.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/admin/acl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/identity_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/identity_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/log_index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/log_index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/admin.php" afterDir="false" />
     </list>
@@ -141,19 +161,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/error" />
+      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/main" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/app/Models/Admin" />
       <recent name="$PROJECT_DIR$/public/admin" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/admin/static/static/h-ui.admin/images" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/app/Models/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
-      <recent name="$PROJECT_DIR$/resources/views/vendor/pagination" />
-      <recent name="$PROJECT_DIR$/public/admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -190,7 +210,10 @@
       <workItem from="1580697319140" duration="471000" />
       <workItem from="1580712325946" duration="653000" />
       <workItem from="1580714554210" duration="11168000" />
-      <workItem from="1580898140763" duration="2114000" />
+      <workItem from="1580898140763" duration="14944000" />
+      <workItem from="1581567710941" duration="34199000" />
+      <workItem from="1582093565462" duration="29130000" />
+      <workItem from="1582262623513" duration="24040000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -227,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579612544768</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="超级管理员">
+      <created>1581058123890</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581058123890</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

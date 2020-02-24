@@ -27,6 +27,8 @@
     <title>龙泽三郎后台系统</title>
     <meta name="keywords" content="龙泽三郎后台系统">
     <meta name="description" content="龙泽三郎后台系统 admin v3.1 ">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
 

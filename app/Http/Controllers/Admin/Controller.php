@@ -6,12 +6,13 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-
+use App\Models\Admin;
 abstract class Controller extends BaseController {
     use ValidatesRequests;
     public $user;
     //视图
     public function render($viewName) {
+
         return view()->make('admin.' . $viewName);
     }
 

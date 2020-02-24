@@ -5,36 +5,36 @@ return [
             'title' => '管理员管理',
             'icon' => '&#xe62d;',
             'icon2' => "&#xe6d5;",
-            'number' => 2,
+            'number' => 1,
             'class' => 'fa fa-desktop green',
             'child' => [
                 [
-                    'title' => '角色管理',
-                    'action' => 'AdminController@identity_list',
+                    'title' => '角色列表',
+                    'action' => 'IdentityController@list',
                     'url' => 'identity_list',
-                    'number' => 20,
+                    'number' => 10,
                     'child' => [
                         [
-                            'title' => '添加配置',
-                            'action' => 'MainController@login',
-                            'url' => 'login',
+                            'title' => '新增角色',
+                            'action' => 'IdentityController@add',
+                            'url' => 'identity_add',
                             'is_menu' => 0,
-                            'number' => 200,
+                            'number' => 100,
+                        ],
+                        [
+                            'title' => '修改状态',
+                            'action' => 'IdentityController@status',
+                            'url' => 'identity_status',
+                            'is_menu' => 0,
+                            'number' => 101,
                         ]
-                    ]
-                ],
-                [
-                    'title' => '权限管理',
-                    'action' => 'LogController@log_index',
-                    'url' => 'log_index',
-                    'number' => 21,
-                    'child' => [
+                        ,
                         [
-                            'title' => '添加配置',
-                            'action' => 'MainController@login',
-                            'url' => 'login',
+                            'title' => '角色权限编辑',
+                            'action' => 'IdentityController@edite',
+                            'url' => 'identity_edite',
                             'is_menu' => 0,
-                            'number' => 210,
+                            'number' => 101,
                         ]
                     ]
                 ]
@@ -43,14 +43,36 @@ return [
                     'title' => '管理员列表',
                     'action' => 'AdminController@list',
                     'url' => 'administrator_list',
-                    'number' => 22,
+                    'number' => 12,
                     'child' => [
                         [
-                            'title' => '添加配置',
-                            'action' => 'MainController@login',
-                            'url' => 'login',
+                            'title' => '添加管理员',
+                            'action' => 'AdminController@add',
+                            'url' => 'administrator_add',
                             'is_menu' => 0,
-                            'number' => 220,
+                            'number' => 120,
+                        ],
+                        [
+                            'title' => '修改管理员状态',
+                            'action' => 'AdminController@status',
+                            'url' => 'administrator_status',
+                            'is_menu' => 0,
+                            'number' => 121,
+                        ]
+                        ,
+                        [
+                            'title' => '修改密码',
+                            'action' => 'AdminController@password',
+                            'url' => 'administrator_password',
+                            'is_menu' => 0,
+                            'number' => 122,
+                        ]  ,
+                        [
+                            'title' => '个人权限分配',
+                            'action' => 'AdminController@auth_privileges',
+                            'url' => 'administrator_auth_privileges',
+                            'is_menu' => 0,
+                            'number' => 122,
                         ]
                     ]
                 ]
@@ -60,73 +82,20 @@ return [
             'title' => '系统管理',
             'icon' => '&#xe62e;',
             'icon2' => "&#xe6d5;",
-            'number' => 1,
+            'number' => 2,
             'class' => 'fa fa-desktop green',
             'child' => [
                 [
                     'title' => '系统日志',
                     'action' => 'LogController@errorlog',
                     'url' => 'error_logs',
-                    'child' => [
-                        [
-                            'title' => '添加配置',
-                            'action' => 'MainController@login',
-                            'url' => 'login',
-                            'is_menu' => 0,
-                            'number' => 10,
-                        ]
-                    ]
+                    'number' => 20,
                 ],
                 [
                     'title' => '错误日志',
                     'action' => 'LogController@log_index',
                     'url' => 'log_index',
-                    'child' => [
-                        [
-                            'title' => '添加配置',
-                            'action' => 'MainController@login',
-                            'url' => 'login',
-                            'is_menu' => 0,
-                            'number' => 10,
-                        ]
-                    ]
-                ]
-            ]
-        ],
-        [
-            'title' => '网站管理',
-            'number' => 1,
-            'icon' => "&#xe62e;",
-            'icon2' => "&#xe6d5;",
-            'class' => 'fa fa-desktop green',
-            'child' => [
-                [
-                    'title' => '配置管理4',
-                    'action' => 'ConfigureController@index',
-                    'url' => 'index',
-                    'child' => [
-                        [
-                            'title' => '添加配置',
-                            'action' => 'MainController@login',
-                            'url' => 'login',
-                            'is_menu' => 0,
-                            'number' => 10,
-                        ]
-                    ]
-                ],
-                [
-                    'title' => '配置管理3',
-                    'action' => 'ConfigureController@index',
-                    'url' => 'index',
-                    'child' => [
-                        [
-                            'title' => '添加配置',
-                            'action' => 'MainController@login',
-                            'url' => 'login',
-                            'is_menu' => 0,
-                            'number' => 10,
-                        ]
-                    ]
+                    'number' => 21
                 ]
             ]
         ]

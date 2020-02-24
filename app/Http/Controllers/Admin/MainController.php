@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -17,6 +18,11 @@ class MainController extends Controller
         $adminId    = $admin->id;
 
         $menus      = $admin->getPrivilegeMenus();
+
+        if (empty($menus)){
+            auth('admin')->logout();
+            return redirect('');
+        }
 
         $live=[];
 
@@ -48,7 +54,7 @@ class MainController extends Controller
 
                 $username = request('user','');
 
-                $tryuser = \App\User::where('name','=',$username)->first();
+                $tryuser = Admin::where('name','=',$username)->first();
 
 //                if(!$tryuser){
 //                    try{
@@ -150,7 +156,7 @@ class MainController extends Controller
         $type    = request('type', 0);
         $links   = request('links', []);
 
-        return $this->render('main/main_jump')
+        return $this->render('main_jump')
             ->with('msg', $message)
             ->with('type', $type)
             ->with('links', $links);

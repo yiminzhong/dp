@@ -44,7 +44,7 @@
                 <tr class="text-c">
                     <td><input type="checkbox" value="{{ $item->id }}" name=""></td>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->username }}</td>
+                    <td> @if($item->type_id == 1) * @else {{$item->username}} @endif</td>
                     <td>{{ $item->title }}</td>
                     <td>{{ $item->client_ip }}</td>
                     <td>{{ $item->created_at }}</td>
