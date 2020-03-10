@@ -21,7 +21,7 @@ class MainController extends Controller
 
         if (empty($menus)){
             auth('admin')->logout();
-            return redirect('');
+            return redirect('login')->with('warning', '暂未分权');;
         }
 
         $live=[];

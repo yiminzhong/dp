@@ -21,20 +21,20 @@ Route::group(array('middleware' => ['auth:admin']), function () {
     Route::any('welcome', array('as' => 'MainController@welcome', 'uses' => 'MainController@welcome') );
 
     Route::group(array('middleware' => 'admin.acl'), function () {
-    Route::any('log_index', array('as' => 'LogController@index', 'uses' => 'LogController@index') );
+        //日志
+        Route::any('log_index', array('as' => 'LogController@index', 'uses' => 'LogController@index') );
+        Route::any('error_logs',array('as' => 'LogController@errorlog', 'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
 
 
-    Route::any('error_logs',array('as' => 'LogController@errorlog', 'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
 
-
-
-//    管理员组
-    Route::any('administrator_list', array('as' => 'AdminController@list', 'uses' => 'AdminController@list') );
-    Route::any('administrator_add/{id}', array('as' => 'AdminController@add', 'uses' => 'AdminController@add') );
-    Route::any('administrator_status/{id}', array('as' => 'AdminController@status', 'uses' => 'AdminController@status') );
-    Route::any('administrator_password/{id}', array('as' => 'AdminController@password', 'uses' => 'AdminController@password') );
-    Route::any('administrator_auth_privileges/{id}', array('as' => 'AdminController@auth_privileges', 'uses' => 'AdminController@auth_privileges') );
-    Route::any('administrator_role_select/{id}', array('as' => 'AdminController@role_select', 'uses' => 'AdminController@role_select') );
+    //    管理员组
+        Route::any('administrator_list', array('as' => 'AdminController@list', 'uses' => 'AdminController@list') );
+        Route::any('administrator_add/{id}', array('as' => 'AdminController@add', 'uses' => 'AdminController@add') );
+        Route::any('administrator_status/{id}', array('as' => 'AdminController@status', 'uses' => 'AdminController@status') );
+        Route::any('administrator_password/{id}', array('as' => 'AdminController@password', 'uses' => 'AdminController@password') );
+        Route::any('administrator_auth_privileges/{id}', array('as' => 'AdminController@auth_privileges', 'uses' => 'AdminController@auth_privileges') );
+        Route::any('administrator_role_select/{id}', array('as' => 'AdminController@role_select', 'uses' => 'AdminController@role_select') );
+        Route::any('administrator_info', array('as' => 'AdminController@info', 'uses' => 'AdminController@info') );
 
     //角色组
         Route::any('identity_list', array('as' => 'IdentityController@list', 'uses' => 'IdentityController@list') );

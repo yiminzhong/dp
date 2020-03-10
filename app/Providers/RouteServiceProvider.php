@@ -39,6 +39,9 @@ class RouteServiceProvider extends ServiceProvider
             if(defined("IS_ADMIN")) {
                 $this->mapAdminAdminRoutes();
                 // $this->mapAdminApiRoutes();
+            }elseif(defined("IS_MEMBER")) {
+                $this->mapAdminMemberRoutes();
+                // $this->mapAdminApiRoutes();
             }
         }
 //        $this->mapApiRoutes();
@@ -53,6 +56,13 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('admin')
             ->namespace($this->namespace."\\Admin")
             ->group(base_path('routes/admin/admin.php'));
+    }
+
+    protected function mapAdminMemberRoutes()
+    {
+        Route::middleware('member')
+            ->namespace($this->namespace."\\Member")
+            ->group(base_path('routes/member/member.php'));
     }
 
     /**

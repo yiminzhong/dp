@@ -136,7 +136,7 @@
 
                         function () {
                             var index = parent.layer.getFrameIndex(window.name);
-                            parent.$('.btn-refresh').click();
+                            parent.location.reload();
                             parent.layer.close(index);
                         }
 

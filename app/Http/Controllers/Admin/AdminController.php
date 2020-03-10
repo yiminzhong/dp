@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use PragmaRX\Google2FA\Google2FA;
 use PragmaRX\Google2FA\Support\Url;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -269,6 +270,36 @@ class AdminController extends Controller
         }
 
         return $this->render('admin_role_select')->with('identity', $identity);
+    }
+
+
+    public function info(){
+
+        if (\request()->isMethod('post')){
+            $request = \request()->all();
+
+            $admin = $this->getCurrentUser();
+
+            $oldpassword = $request['oldpassword'];
+
+            if(!Hash::check($oldpassword, $admin->password)){
+                return ['ok'=>2,'msg'=>"原密码错误"];
+            }
+
+            if (isset($request['password']) ){
+                $admin->password = bcrypt($request['password']);
+            }
+
+            if ($admin->save()){
+                return ['ok'=>1];
+            }else{
+                return ['ok'=>2];
+            }
+
+
+        }
+
+        return $this->render('admin_info');
     }
 
 

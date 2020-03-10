@@ -10,14 +10,15 @@
             <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                 <ul class="cl">
                     <li>
-                    @if ($admin->type == 1 && $admin->creat_id == 0 && $admin->groups_id == 0)
-                        系统超级管理员
+                    @if ($admin->nike_name )
+                        {{$admin->nike_name}}
                     @endif
                     </li>
                     <li class="dropDown dropDown_hover">
                         <a href="#" class="dropDown_A">{{$admin->name}} <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
+                            <li><a href="javascript:;" onClick="changge_my_password('管理员资料','administrator_info')">资料详情</a></li>
                             <li><a href="logout">退出</a></li>
                         </ul>
                     </li>
@@ -196,6 +197,15 @@
                 title: '查看信息',
                 content: '<div>id:{{$admin->id}}--name:{{$admin->name}}</div>'
             });
+        }
+
+        function changge_my_password(title,url) {
+            var index = layer.open({
+                type: 2,
+                title: title,
+                content: url
+            });
+            layer.full(index);
         }
 
         /*资讯-添加*/
