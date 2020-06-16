@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Member\Controller;
 use Illuminate\Support\Facades\Hash;
 use PragmaRX\Google2FA\Google2FA;
-use App\Models\Admin\Members;
+use App\Models\Members\Members;
 
 
 
@@ -20,7 +20,7 @@ class MainController extends Controller
     );
 
     protected function validateLogin(Request $request){
-        $this->validate($request, [
+        $s = $this->validate($request, [
             'member_user' => 'required|alpha_dash|min:2',
             'password' => 'required|alpha_dash|between:4,45',
             'captcha' => 'required|captcha',
@@ -32,12 +32,11 @@ class MainController extends Controller
             'password.alpha_dash' => trans('validation.alpha_dash'),
 
             'captcha.required' => trans('validation.required'),
-            'captcha.captcha' => trans('validation.captcha'),
-
-
-
+            'captcha.captcha' => trans('验证码错误'),
 
         ]);
+
+        return true;
     }
 
 
@@ -45,31 +44,21 @@ class MainController extends Controller
 
         $admin      = $this->getCurrentUser();
 
-        $adminId    = $admin->id;
 
-        $menus      = $admin->getPrivilegeMenus();
-
-        if (empty($menus)){
-            auth('admin')->logout();
+        if ($admin->status !== 1){
+            auth('members')->logout();
             return redirect('login')->with('warning', '暂未分权');;
         }
 
-        $live=[];
 
-        return $this->render('index')->with('admin', $admin)->with('menus', $menus)
-//            ->with('uid', $adminId)
-//
-//            ->with('live', json_encode($live))
-//            ->with('admin_group_name', $admin->group->group_name)
-//
-            ;
+        return $this->render('index');
     }
 
 
 
     public function login(Request $request){
 
-        if (auth('member')->check()){
+        if (auth('members')->check()){
             return redirect('');
         }
 
@@ -79,22 +68,20 @@ class MainController extends Controller
 
             $v = self::validateLogin($request);
 
-
-            if (!$v->fails()) {
+            if ($v) {
 
                 $member_user = request('member_user','');
 
-                $member_user = Members::where([['login_name'=>$member_user],['status'=>1]])->first();
-                dd($member_user);
                 if (auth('members')->attempt(array('login_name' => request('member_user', ''), 'password' => request('password', '')), request('remember', 0) ? true : false)) {
                     $user = auth('members')->user();
 
 
 
                     if ($user->status != 1) {
-                        auth('admin')->logout();
+                        auth('members')->logout();
                         return redirect('login')->with('warning', '登陆失败，账户处于禁用状态！');
                     }
+
 //                    $iCostWorker = configure('web_pass_workers',10);
 //                    dd($iCostWorker);
 //                    $options = ['rounds' => $iCostWorker];

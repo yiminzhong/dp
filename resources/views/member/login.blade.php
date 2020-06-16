@@ -43,6 +43,12 @@
                             {{ session('success') }}
                         @endif
 
+                        @if (count($errors) > 0)
+                            @foreach ($errors->all() as $error)
+                               {{ $error }}
+                            @endforeach
+                        @endif
+
                     </label>
                 </div>
             </div>
@@ -63,20 +69,6 @@
                 <div class="formControls col-xs-8 col-xs-offset-3">
                     <input id="captcha" name="captcha" class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="" style="width:150px;">
                     <img src="{{captcha_src()}}" style="cursor: pointer" onclick="this.src='{{captcha_src()}}'+Math.random()" id="img"> <a id="kanbuq" onclick="document.getElementById('img').src='{{captcha_src()}}'+Math.random()" href="javascript:;">看不清，换一张</a> </div>
-
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-
-
-
             </div>
 
             <div class="row cl">

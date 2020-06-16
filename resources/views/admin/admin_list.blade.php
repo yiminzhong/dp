@@ -76,20 +76,25 @@
                             <span class="label radius">已停用</span>
                         @endif</td>
                     <td >
-                        @if ($item->status == 1)
-                            <a style="text-decoration:none" onClick="admin_stop(this,{{ $item->id }})" href="javascript:;" title="停用">停用</a>
-                        @else
-                            <a style="text-decoration:none" onClick="admin_start(this,{{ $item->id }})" href="javascript:;" title="启用">启用</a>
-                        @endif
 
-                        <a title="修改密码" href="javascript:;" onclick="administrator_password('修改密码','administrator_password/{{ $item->id }}','10001','600','270')" class="ml-5" style="text-decoration:none">修改密码</a>
+
                             @if ($item->creat_id == 0 )
                                 ******
                             @else
-                                <a title="角色分配" href="javascript:;" onclick="admin_edit('角色分配','administrator_role_select/{{ $item->id }}','10001','600','270')" class="ml-5" style="text-decoration:none">角色分配</a>
+
+                                @if($item->creat_id  == $admin->id)
+                                    @if ($item->status == 1)
+                                        <a style="text-decoration:none" onClick="admin_stop(this,{{ $item->id }})" href="javascript:;" title="停用">停用</a>
+                                    @else
+                                        <a style="text-decoration:none" onClick="admin_start(this,{{ $item->id }})" href="javascript:;" title="启用">启用</a>
+                                    @endif
+                                        <a title="修改密码" href="javascript:;" onclick="administrator_password('修改密码','administrator_password/{{ $item->id }}','10001','600','270')" class="ml-5" style="text-decoration:none">修改密码</a>
+
+                                        <a title="角色分配" href="javascript:;" onclick="admin_edit('角色分配','administrator_role_select/{{ $item->id }}','10001','600','270')" class="ml-5" style="text-decoration:none">角色分配</a>
+                                        <a title="个人权限分配" href="javascript:;" onclick="administrator_auth_privileges('个人权限分配','administrator_auth_privileges/{{ $item->id }}','800')" class="ml-5" style="text-decoration:none">个人权限分配</a>
+                                 @endif
 
                             @endif
-                        <a title="个人权限分配" href="javascript:;" onclick="administrator_auth_privileges('个人权限分配','administrator_auth_privileges/{{ $item->id }}','800')" class="ml-5" style="text-decoration:none">个人权限分配</a>
 {{--                        <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none">修改密码</a>--}}
 
                     </td>

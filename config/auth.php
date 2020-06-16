@@ -50,7 +50,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'member' => [
+        'members' => [
             'driver' => 'session',
             'provider' => 'members',
         ],

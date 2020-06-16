@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Admin;
+namespace App\Models\Members;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Admin\Identity;
