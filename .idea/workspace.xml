@@ -2,22 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LogController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMicroMessenger.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/captcha.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/debug-server.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/logviewer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/tinker.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/trustedproxy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/member/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/member/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/IdentityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IdentityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Members/Members.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Members/Members.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/member/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/log_index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/log_index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/member/member.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/member/member.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/testing/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/testing/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,19 +154,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/member" />
-      <recent name="$PROJECT_DIR$/app/Models/Members" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Member" />
-      <recent name="$PROJECT_DIR$/routes/member" />
-      <recent name="$PROJECT_DIR$/routes" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/app/Models/Admin" />
       <recent name="$PROJECT_DIR$/public/admin" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/admin/static/static/h-ui.admin/images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/member" />
+      <recent name="$PROJECT_DIR$/app/Models/Members" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Member" />
+      <recent name="$PROJECT_DIR$/routes/member" />
+      <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -212,7 +213,14 @@
       <workItem from="1583315184529" duration="1450000" />
       <workItem from="1583818706253" duration="4891000" />
       <workItem from="1583889992082" duration="636000" />
-      <workItem from="1592289243390" duration="3414000" />
+      <workItem from="1592289243390" duration="3668000" />
+      <workItem from="1592534833464" duration="2432000" />
+      <workItem from="1592800359000" duration="1987000" />
+      <workItem from="1592804237274" duration="746000" />
+      <workItem from="1592902705158" duration="2472000" />
+      <workItem from="1592906098003" duration="296000" />
+      <workItem from="1593578782291" duration="348000" />
+      <workItem from="1593579165793" duration="2967000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -277,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583819270648</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="超级管理后台">
+      <created>1592304319578</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592304319578</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +314,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
     <MESSAGE value="超级管理员" />
-    <option name="LAST_COMMIT_MESSAGE" value="超级管理员" />
+    <MESSAGE value="超级管理后台" />
+    <option name="LAST_COMMIT_MESSAGE" value="超级管理后台" />
   </component>
 </project>

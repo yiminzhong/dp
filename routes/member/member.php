@@ -16,6 +16,8 @@ Route::any('registered',  'MainController@registered')->name('registered');
 Route::get('logout', array('as' => 'MainController@logout', 'uses' => "MainController@logout"));
 Route::any('jump', array('as' => 'MainController@jump', 'uses' => "MainController@jump"));
 
+Route::any('welcome', array('as' => 'MainController@welcome', 'uses' => 'MainController@welcome') );
+
 Route::group(array('middleware' => ['auth:members']), function () {
     // 首页相关
     Route::get('', array('as' => 'MainController@index', 'uses' => "MainController@index"));

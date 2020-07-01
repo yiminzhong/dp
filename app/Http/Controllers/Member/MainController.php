@@ -123,7 +123,7 @@ class MainController extends Controller
         }
 
 
-        return $this->Render('login');
+        return $this->Render('welcome');
     }
     /**
      * 提示页面 跳转中转页面
@@ -142,6 +142,7 @@ class MainController extends Controller
 
     public function welcome()
     {
+
         return $this->render('welcome');
     }
 

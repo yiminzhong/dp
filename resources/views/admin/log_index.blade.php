@@ -20,7 +20,7 @@
 		<span class="l">
 		<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
 		</span>
-            <span class="r">共有数据：<strong>111</strong> 条</span>
+            <span class="r">共有数据：<strong>{{$data['lists']->total()}}</strong> 条</span>
         </div>
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
@@ -56,8 +56,10 @@
                         @else
                             ok2
                         @endif</td>
-                    <td><a title="详情" href="javascript:;" onclick="system_log_show(this,'10001')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe665;</i></a>
-                        <a title="删除" href="javascript:;" onclick="system_log_del(this,'10001')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                    <td>
+
+                        <a title="详情" href="javascript:;" onclick="system_log_show('详情','log_info/{{ $item->id }}','10001','600','270')" class="ml-5" style="text-decoration:none">详情</a>
+                        <a title="删除" href="javascript:;" onclick="system_log_del(this,{{$item->id}})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
                 </tr>
             @endforeach
             </tbody>
@@ -77,6 +79,7 @@
 
 @section('script')
     <script type="text/javascript">
+
         // $('.table-sort').dataTable({
         //     "lengthMenu":false,//显示数量选择
         //     "bFilter": false,//过滤功能
@@ -91,9 +94,10 @@
         // });
         //
         // /*查看日志*/
-        // function system_log_show(){
-        //
-        // }
+
+        function system_log_show(title,url,id,w,h){
+            layer_show(title,url,w,h);
+        }
         // /*日志-删除*/
         // function system_log_del(obj,id){
         //     layer.confirm('确认要删除吗？',function(index){

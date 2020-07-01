@@ -56,7 +56,7 @@ class IdentityController extends Controller
 
 
     public function add($id=0){
-        if (!$id || $id=0){
+        if (!$id || $id==0){
             return self::notice("会话不存在", 2, array(array('title' => '角色管理', 'url' => url('/identity_list'))));
         }
         $admin = $this->getCurrentUser();

@@ -23,6 +23,7 @@ Route::group(array('middleware' => ['auth:admin']), function () {
     Route::group(array('middleware' => 'admin.acl'), function () {
         //日志
         Route::any('log_index', array('as' => 'LogController@index', 'uses' => 'LogController@index') );
+        Route::any('log_info/{id}', array('as' => 'LogController@info', 'uses' => 'LogController@info') );
         Route::any('error_logs',array('as' => 'LogController@errorlog', 'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
 
 

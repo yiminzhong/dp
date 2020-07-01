@@ -34,8 +34,18 @@ class LogController extends Controller
 
         $data['lists'] = $logs;
         $data['location'] = array(array('title' => '日志列表'));
-//        dd($data['lists']);
+
         return $this->render('log_index')->with('data', $data)->with('s', $s);
 
+    }
+
+    public function info($id){
+
+        if (!$id || $id==0){
+            return self::notice("会话不存在", 2, array(array('title' => '系统管理', 'url' => url('/log_index'))));
+        }
+
+        $info = AdminLogs::find($id);
+        dd($info);
     }
 }
