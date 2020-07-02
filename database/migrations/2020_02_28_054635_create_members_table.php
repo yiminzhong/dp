@@ -17,6 +17,8 @@ class CreateMembersTable extends Migration
             $table->bigIncrements('id');
             $table->string('login_name')->unique();
             $table->string('members_name')->nullable()->comment("用户名");
+            $table->string('ipone')->nullable()->comment("ipone");
+            $table->string('email')->nullable()->comment("email");
             $table->string('password');
             $table->string('session_id',255)->default(''); //sessionid
             $table->rememberToken();

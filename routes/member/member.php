@@ -17,11 +17,11 @@ Route::get('logout', array('as' => 'MainController@logout', 'uses' => "MainContr
 Route::any('jump', array('as' => 'MainController@jump', 'uses' => "MainController@jump"));
 
 Route::any('welcome', array('as' => 'MainController@welcome', 'uses' => 'MainController@welcome') );
+Route::get('', array('as' => 'MainController@index', 'uses' => "MainController@index"));
+
 
 Route::group(array('middleware' => ['auth:members']), function () {
     // 首页相关
-    Route::get('', array('as' => 'MainController@index', 'uses' => "MainController@index"));
-    Route::any('welcome', array('as' => 'MainController@welcome', 'uses' => 'MainController@welcome') );
 
     Route::group(array('middleware' => 'admin.acl'), function () {
         //日志

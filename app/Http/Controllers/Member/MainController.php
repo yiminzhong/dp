@@ -39,6 +39,26 @@ class MainController extends Controller
         return true;
     }
 
+    protected function validateLogin2(Request $request){
+        $s = $this->validate($request, [
+            'member_user' => 'required|alpha_dash|min:2',
+            'password' => 'required|alpha_dash|between:4,45',
+            'captcha' => 'required|captcha',
+        ],[
+            'member_user.required' => trans('validation.required'),
+            'member_user.alpha_dash' => trans('validation.alpha_dash'),
+
+            'password.required' => trans('validation.required'),
+            'password.alpha_dash' => trans('validation.alpha_dash'),
+
+            'captcha.required' => trans('validation.required'),
+            'captcha.captcha' => trans('验证码错误'),
+
+        ]);
+
+        return true;
+    }
+
 
     public function index() {
 
@@ -155,6 +175,24 @@ class MainController extends Controller
 
     public function registered(){
 
+        if (request()->isMethod('post')){
+
+            $request =  \request()->all();
+
+            $v = self::validateLogin2($request);
+
+            if ($v) {
+
+                $member_user = request('member_user','');
+
+                return redirect('login')->with('warning', '登陆失败，账号或密码错误！');
+            } else {
+                return redirect('login')->withErrors($v)->withInput();
+            }
+
+        }
+
+        return $this->render('register');
     }
 
 }
