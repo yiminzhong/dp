@@ -24,7 +24,7 @@ abstract class Controller extends BaseController {
     protected function getCurrentUser()
     {
         if(!$this->user){
-            $this->user= auth()->user();
+            $this->user= auth('members')->user();
         }
 
         return $this->user;

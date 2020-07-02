@@ -15,24 +15,24 @@ class MainController extends Controller
 {
 
     public static $login_rules = array(
-        'member_user' => 'required|alpha_dash|min:2',
+        'name' => 'required|alpha_dash|min:2',
         'password' => 'required|alpha_dash|between:4,45',
     );
 
     protected function validateLogin(Request $request){
         $s = $this->validate($request, [
-            'member_user' => 'required|alpha_dash|min:2',
+            'name' => 'required|alpha_dash|min:2',
             'password' => 'required|alpha_dash|between:4,45',
-            'captcha' => 'required|captcha',
+//            'captcha' => 'required|captcha',
         ],[
-            'member_user.required' => trans('validation.required'),
+            'name.required' => trans('validation.required'),
             'member_user.alpha_dash' => trans('validation.alpha_dash'),
 
             'password.required' => trans('validation.required'),
             'password.alpha_dash' => trans('validation.alpha_dash'),
-
-            'captcha.required' => trans('validation.required'),
-            'captcha.captcha' => trans('验证码错误'),
+//
+//            'captcha.required' => trans('validation.required'),
+//            'captcha.captcha' => trans('验证码错误'),
 
         ]);
 
@@ -61,16 +61,14 @@ class MainController extends Controller
 
     public function index() {
 
-        $admin      = $this->getCurrentUser();
+        $admin = $this->getCurrentUser();
 
-
-        if ($admin->status !== 1){
+        if (isset($admin->status)&&$admin->status !== 1 ){
             auth('members')->logout();
             return redirect('login')->with('warning', '暂未分权');;
         }
 
-
-        return $this->render('index');
+        return $this->render('welcome')->with('admin',$admin);
     }
 
 
@@ -78,10 +76,9 @@ class MainController extends Controller
     public function login(Request $request){
 
         if (auth('members')->check()){
+
             return redirect('');
         }
-
-
 
         if (request()->isMethod('post')){
 
@@ -89,9 +86,9 @@ class MainController extends Controller
 
             if ($v) {
 
-                $member_user = request('member_user','');
+                $member_user = request('name','');
 
-                if (auth('members')->attempt(array('login_name' => request('member_user', ''), 'password' => request('password', '')), request('remember', 0) ? true : false)) {
+                if (auth('members')->attempt(array('login_name' => request('name', ''), 'password' => request('password', '')), request('remember', 0) ? true : false)) {
                     $user = auth('members')->user();
 
 
@@ -142,7 +139,7 @@ class MainController extends Controller
         }
 
 
-        return $this->Render('welcome');
+        return $this->Render('login');
     }
     /**
      * 提示页面 跳转中转页面
@@ -167,7 +164,8 @@ class MainController extends Controller
 
     public function logout()
     {
-        auth('admin')->logout();
+        auth('members')->logout();
+
         return redirect('');
     }
 
@@ -195,8 +193,9 @@ class MainController extends Controller
                 $member->login_name = $name;
                 $member->email = $email;
                 $member->ipone =  $iphone;
-                $member->password =  $password;
+                $member->password = encrypt( $password);
                 $member->status =  1;
+                $member->p_id =  0;
 
             if ($member->save()){
                 return redirect('login');

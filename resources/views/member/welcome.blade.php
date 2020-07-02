@@ -87,10 +87,17 @@
                     </nav> <!-- end .main-nav -->
                     <a href class="responsive-menu-open"><i class="ion-navicon"></i></a>
                 </div> <!-- end .navigation -->
+                @if($admin)
+                    <div class="button-group-merged flex no-column">
+                        <a href="logout" class="button">退出</a>
+                        <a href="#" class="button">{{$admin->login_name}}</a>
+                    </div>
+                    @else
                 <div class="button-group-merged flex no-column">
                     <a href="registered" class="button">注册</a>
-                    <a href="post-job-form.html" class="button">登陆</a>
+                    <a href="login" class="button">登陆</a>
                 </div> <!-- end .button-group-merged -->
+                @endif
             </div> <!-- end .right -->
         </div> <!-- end .header-inner -->
     </div> <!-- end .container -->
