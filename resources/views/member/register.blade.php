@@ -32,7 +32,16 @@
             <i class="iconpic iconpic-logo"></i>
         </div>
         <div class="row clearfix form-title">账户注册</div>
-        <form class="form form-horizontal" action="" method="post" id="form-reg">
+
+        @if(session()->has('warning'))
+            {{ session('warning') }}
+        @endif
+        @if(session()->has('success'))
+            {{ session('success') }}
+        @endif
+
+        <form class="form form-horizontal" action="registered" method="post" id="form-reg">
+            @csrf
             <div class="row clearfix">
                 <input type="name" class="input-text radius size-L" name="name" id="name" value="" placeholder="账户名称">
             </div>

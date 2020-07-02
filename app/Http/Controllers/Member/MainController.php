@@ -41,18 +41,17 @@ class MainController extends Controller
 
     protected function validateLogin2(Request $request){
         $s = $this->validate($request, [
-            'member_user' => 'required|alpha_dash|min:2',
+            'name' => 'required|alpha_dash|min:2',
             'password' => 'required|alpha_dash|between:4,45',
-            'captcha' => 'required|captcha',
         ],[
-            'member_user.required' => trans('validation.required'),
-            'member_user.alpha_dash' => trans('validation.alpha_dash'),
+            'name.required' => trans('validation.required'),
+            'name.alpha_dash' => trans('validation.alpha_dash'),
 
             'password.required' => trans('validation.required'),
             'password.alpha_dash' => trans('validation.alpha_dash'),
 
-            'captcha.required' => trans('validation.required'),
-            'captcha.captcha' => trans('验证码错误'),
+//            'captcha.required' => trans('validation.required'),
+//            'captcha.captcha' => trans('验证码错误'),
 
         ]);
 
@@ -173,19 +172,37 @@ class MainController extends Controller
     }
 
 
-    public function registered(){
+    public function registered(Request $request){
 
         if (request()->isMethod('post')){
-
-            $request =  \request()->all();
 
             $v = self::validateLogin2($request);
 
             if ($v) {
 
-                $member_user = request('member_user','');
+                $_token = request('_token','');
+                $name = request('name','');
+                $email = request('email','');
+                $iphone = request('iphone','');
+                $password = request('password','');
+                $password2 = request('password2','');
 
-                return redirect('login')->with('warning', '登陆失败，账号或密码错误！');
+                if ($password !==$password2){
+                    return redirect('registered')->with('warning', '注册失败，两次密码不一致！');
+                }
+
+                $member = new Members();
+                $member->login_name = $name;
+                $member->email = $email;
+                $member->ipone =  $iphone;
+                $member->password =  $password;
+                $member->status =  1;
+
+            if ($member->save()){
+                return redirect('login');
+            }
+
+                return redirect('registered')->with('warning', '登陆失败，账号或密码错误！');
             } else {
                 return redirect('login')->withErrors($v)->withInput();
             }
