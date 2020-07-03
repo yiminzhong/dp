@@ -44,6 +44,10 @@ Route::group(array('middleware' => ['auth:admin']), function () {
 
         Route::any('identity_edite/{id}', array('as' => 'IdentityController@edite', 'uses' => 'IdentityController@edite') );
 
+        //会员管理
+        Route::any('members_list', array('as' => 'MembersController@list', 'uses' => 'MembersController@list') );
+        Route::any('members_status/{id}', array('as' => 'MembersController@members_status', 'uses' => 'MembersController@members_status') );
+
 
     });
 });

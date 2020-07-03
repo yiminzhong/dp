@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/member/about_us.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/member/layouts/header2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MembersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Admin/Member.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/members/members_list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/member/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/member/member.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/member/member.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Members/Members.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Members/Members.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/admin/acl.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/admin/acl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/admin.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,16 +140,16 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/member" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/members" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/members" />
+      <recent name="$PROJECT_DIR$/app/Models/Admin" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/resources/views/member" />
       <recent name="$PROJECT_DIR$/app/Models/Members" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Member" />
-      <recent name="$PROJECT_DIR$/routes/member" />
-      <recent name="$PROJECT_DIR$/routes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/member/static/H-ui.ucenter" />
@@ -210,7 +211,7 @@
       <workItem from="1592906098003" duration="296000" />
       <workItem from="1593578782291" duration="348000" />
       <workItem from="1593579165793" duration="18593000" />
-      <workItem from="1593759718415" duration="2006000" />
+      <workItem from="1593759718415" duration="7518000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -310,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593683338343</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="大唐招聘">
+      <created>1593761936731</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1593761936731</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

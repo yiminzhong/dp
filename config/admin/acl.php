@@ -2,12 +2,34 @@
 return [
     'privileges' =>[
         [
+            'title' => '会员管理',
+            'icon' => '&#xe60d;',
+            'icon2' => "&#xe6d5;",
+            'number' => 1,
+            'class' => 'fa fa-desktop green',
+            'child' => [
+                [
+                    'title' => '会员列表',
+                    'action' => 'MembersController@list',
+                    'url' => 'members_list',
+                    'number' => 30,
+                    'child' => [
+
+                    ]
+                ],
+
+
+            ]
+        ],
+
+        [
             'title' => '管理员管理',
             'icon' => '&#xe62d;',
             'icon2' => "&#xe6d5;",
             'number' => 1,
             'class' => 'fa fa-desktop green',
             'child' => [
+
                 [
                     'title' => '角色列表',
                     'action' => 'IdentityController@list',

@@ -3,10 +3,8 @@
 namespace App\Models\Members;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Admin\Identity;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Arr;
 
 class Members extends Authenticatable
 {
