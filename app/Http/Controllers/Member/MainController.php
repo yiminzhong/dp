@@ -211,4 +211,11 @@ class MainController extends Controller
         return $this->render('register');
     }
 
+
+    public function about_us(){
+
+        return  $this->render('about_us');
+    }
+
+
 }

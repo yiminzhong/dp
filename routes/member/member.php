@@ -20,6 +20,9 @@ Route::any('welcome', array('as' => 'MainController@welcome', 'uses' => 'MainCon
 Route::get('', array('as' => 'MainController@index', 'uses' => "MainController@index"));
 
 
+Route::get('about_us', array('as' => 'MainController@about_us', 'uses' => "MainController@about_us"));
+
+
 Route::group(array('middleware' => ['auth:members']), function () {
     // 首页相关
 
