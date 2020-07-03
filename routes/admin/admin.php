@@ -47,6 +47,7 @@ Route::group(array('middleware' => ['auth:admin']), function () {
         //会员管理
         Route::any('members_list', array('as' => 'MembersController@list', 'uses' => 'MembersController@list') );
         Route::any('members_status/{id}', array('as' => 'MembersController@members_status', 'uses' => 'MembersController@members_status') );
+        Route::any('members_info/{id}', array('as' => 'MembersController@members_info', 'uses' => 'MembersController@members_info') );
 
 
     });

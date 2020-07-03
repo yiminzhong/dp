@@ -35,20 +35,10 @@
                         @if($v->status == 1)
                             <a style="text-decoration:none" onClick="admin_stop(this,{{ $v->id }})" href="javascript:;" title="停用">禁用</a>
                         @else
-                            <a style="text-decoration:none" onClick="admin_stop(this,{{ $v->id }})" href="javascript:;" title="停用">解禁</a>
+                            <a style="text-decoration:none" onClick="admin_start(this,{{ $v->id }})" href="javascript:;" title="停用">解禁</a>
                         @endif
-{{--                        @if($v->creat_id == 0)--}}
-{{--                            ******--}}
-{{--                        @else--}}
-{{--                            <a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','identity_edite/{{$v->id}}','1')" style="text-decoration:none">角色编辑</a>--}}
 
-{{--                            @if ($v->status == 1)--}}
-{{--                                <a style="text-decoration:none" onClick="admin_stop(this,{{ $v->id }})" href="javascript:;" title="停用">停用</a>--}}
-{{--                            @else--}}
-{{--                                <a style="text-decoration:none" onClick="admin_start(this,{{ $v->id }})" href="javascript:;" title="启用">启用</a>--}}
-{{--                            @endif--}}
-
-{{--                        @endif--}}
+                            <a title="会员详情" href="javascript:;" onclick="admin_role_edit('会员详情','members_info/{{$v->id}}','1')" style="text-decoration:none">会员详情</a>
 
                     </td>
                 </tr>
@@ -141,7 +131,7 @@
                 //此处请求后台程序，下方是成功后的前台处理……
                 $.ajax({
                     type: 'POST',
-                    url: 'identity_status/'+id,
+                    url: 'members_status/'+id,
                     dataType: 'json',
                     data:{status:'open'},
                     headers: {

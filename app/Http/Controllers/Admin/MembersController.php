@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Models\Admin;
+use App\Models\Admin\Identity;
 use Illuminate\Support\Facades\DB;
 
 class MembersController extends Controller
@@ -58,7 +59,52 @@ class MembersController extends Controller
     }
 
     public function members_status($id){
+        if (!$id || $id==0){
 
+            return json_encode(['msg'=>"角色不存在"]);
+        }
+
+        $request = \request()->all();
+
+        if (!isset($request['status']) || !$request['status']){
+
+            return json_encode(['msg'=>"意外操作 账户状态不正确"]);
+
+        }
+
+        if ($request['status'] == 'stop'){
+
+            $status = 0;
+        }else{
+            $status = 1;
+        }
+
+
+        $change_status = Admin\Member::find($id);
+
+
+        if ($change_status->status == $status){
+
+            return json_encode(['msg'=>"账户异常，请稍等操作"]);
+
+        }
+
+        $change_status->status = $status;
+
+        if ($change_status->save()){
+            return json_encode(['msg'=>"操作完成"]);
+        }
+
+    }
+
+
+    public function members_info($id){
+
+        if (!$id || $id == 0){
+
+            return self::notice("会话不存在", 2, array(array('title' => '会员列表', 'url' => url('/members_lsit'))));
+
+        }
     }
 
 }
