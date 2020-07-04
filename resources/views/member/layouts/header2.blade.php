@@ -43,8 +43,9 @@
                             <li><a href="about.html">担保免赔付招聘</a></li>
                             <li><a href="about.html">普通招聘</a></li>
                             <li><a href="about.html">骗子公告栏</a></li>
-                            <li><a href="about.html">发布信息</a></li>
-                            <li><a href="about.html">发布求职信息</a></li>
+                            <li><a href="about.html">发布职位</a></li>
+                            <li><a href="about.html">入职申请</a></li>
+                            <li><a href="/myinfo">个人基本信息</a></li>
                             {{--                            <li class="menu-item-has-children">--}}
                             {{--                                <a href="candidates-listing.html">Candidates</a>--}}
                             {{--                                <ul>--}}
@@ -90,10 +91,15 @@
                     <a href class="responsive-menu-open"><i class="ion-navicon"></i></a>
                 </div> <!-- end .navigation -->
                 @if(isset($admin))
-                    <div class="button-group-merged flex no-column">
-                        <a href="logout" class="button">退出</a>
-                        <a href="#" class="button">{{$admin->login_name}}</a>
-                    </div>
+{{--                    <div class="button-group-merged flex no-column">--}}
+{{--                        <a href="logout" class="button">退出</a>--}}
+{{--                        <a href="#" class="button">{{$admin->login_name}}</a>--}}
+{{--                    </div>--}}
+
+                    <div class="account-info-top flex items-center no-column">
+                        <a href="#0" class="notification-icon"><i class="ion-android-notifications"></i></a>
+                        <a href="#0" class="profile-button flex space-between items-center no-column no-wrap"><span>Hi!</span>{{$admin->login_name}} <img src="static/zp/images/avatar01.jpg" alt="avatar" class="img-responsive"></a>
+                    </div> <!-- end .account-info-top -->
                 @else
                     <div class="button-group-merged flex no-column">
                         <a href="registered" class="button">注册</a>

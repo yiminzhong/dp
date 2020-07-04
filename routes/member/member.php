@@ -24,12 +24,7 @@ Route::get('about_us', array('as' => 'MainController@about_us', 'uses' => "MainC
 
 
 Route::group(array('middleware' => ['auth:members']), function () {
-    // 首页相关
 
-    Route::group(array('middleware' => 'admin.acl'), function () {
-        //日志
-//        Route::any('log_index', array('as' => 'LogController@index', 'uses' => 'LogController@index') );
-//        Route::any('error_logs',array('as' => 'LogController@errorlog', 'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'));
+    Route::get('myinfo', array('as' => 'MemberController@myinfo', 'uses' => "MemberController@myinfo"));
 
-    });
 });

@@ -223,8 +223,14 @@ class MainController extends Controller
 
 
     public function about_us(){
+        $admin = $this->getCurrentUser();
 
-        return  $this->render('about_us');
+        if (isset($admin->status)&&$admin->status !== 1 ){
+            auth('members')->logout();
+            return redirect('login')->with('warning', '暂未分权');;
+        }
+
+        return $this->render('about_us')->with('admin',$admin);
     }
 
 
