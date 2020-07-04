@@ -33,7 +33,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li class="heading">账户信息</li>
                             <li class="active"><a data-toggle="pill" href="#profile">我的资料</a></li>
-                            <li ><a data-toggle="pill" href="#favorite-candidates">Favorite Candidates</a></li>
+                            <li ><a data-toggle="pill" href="#favorite-candidates">我的推广</a></li>
                             <li class="notification-link flex space-between items-center no-column no-wrap"><a data-toggle="pill" href="#notifications-employer">Notifications</a> <span class="notification-count">2</span></li>
                             <li><a data-toggle="pill" href="#packages">Packages</a></li>
                             <li class="nav-divider"></li>
@@ -50,29 +50,26 @@
                         <div class="tab-content employer-dashboard">
 
                             <div id="favorite-candidates" class="tab-pane fade in ">
-                                <h3 class="tab-pane-title">Favorite Candidates</h3>
+                                <h3 class="tab-pane-title">我的推广</h3>
                                 <div class="favorite-candidates-list-wrapper">
 
                                     <ul class="fav-candidates-table-headings flex items-center no-column list-unstyled">
-                                        <li class="candidate-name-cell candidate-cell"><h6>Name</h6></li>
+                                        <li class="candidate-name-cell candidate-cell"><h6>account</h6></li>
                                         <li class="candidate-skills-cell candidate-cell"><h6>Skills</h6></li>
                                         <li class="candidate-location-cell"><h6>Location</h6></li>
                                     </ul> <!-- end .fav-candidates-table-headings -->
-
+                                        @foreach($my_menbers_list as $k=>$v)
                                     <div class="fav-candidates-wrapper">
 
                                         <div class="fav-candidate flex no-wrap no-column items-center list-unstyled">
                                             <div class="candidate-name-cell candidate-cell flex items-center no-column no-wrap">
                                                 <div class="cell-mobile-label">
-                                                    <h6>Name</h6>
+                                                    <h6>account</h6>
                                                 </div> <!-- end .cell-label -->
                                                 <div class="candidate-cell-inner flex items-center no-column no-wrap">
-                                                    <div class="candidate-img">
-                                                        <img src="static/zp/images/candidate-small01.jpg" alt="candidate-image" class="img-responsive">
-                                                    </div> <!-- end .candidate-img -->
+
                                                     <div class="cell-text no-column">
-                                                        <h4>Richard Thomas</h4>
-                                                        <p>UI/UX Designer</p>
+                                                        <p>{{$v['login_name']}}</p>
                                                     </div> <!-- end .cell-text -->
                                                 </div> <!-- end .candidate-cell-inner -->
                                             </div> <!-- end .candidate-name-cell -->
@@ -82,187 +79,7 @@
                                                     <h6>Skills</h6>
                                                 </div> <!-- end .cell-label -->
                                                 <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <button type="button" class="button button-sm grey ">PS</button>
-                                                    <button type="button" class="button button-sm grey">AI</button>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-skills-cell -->
-
-                                            <div class="candidate-location-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Location</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <p>Park Ave, NYC, USA</p>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-location-cell -->
-
-                                            <div class="candidate-edit-cell flex items-center no-wrap no-column no-wrap">
-                                                <i class="ion-ios-compose-outline edit-icon"></i>
-                                                <i class="ion-ios-trash-outline trash-icon"></i>
-                                                <i class="ion-ios-more-outline options-icon"></i>
-                                            </div> <!-- end .posted-job-edit-cell -->
-                                        </div> <!-- end .fav-candidate -->
-
-                                        <div class="divider"></div>
-
-
-                                        <div class="fav-candidate flex no-wrap no-column items-center list-unstyled">
-                                            <div class="candidate-name-cell candidate-cell flex items-center no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Name</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex items-center no-column no-wrap">
-                                                    <div class="candidate-img">
-                                                        <img src="static/zp/images/candidate-small02.jpg" alt="candidate-image" class="img-responsive">
-                                                    </div> <!-- end .candidate-img -->
-                                                    <div class="cell-text no-column">
-                                                        <h4>David Ortega</h4>
-                                                        <p>Front-end developer</p>
-                                                    </div> <!-- end .cell-text -->
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-name-cell -->
-
-                                            <div class="candidate-skills-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Skills</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <button type="button" class="button button-sm grey ">PS</button>
-                                                    <button type="button" class="button button-sm grey">AI</button>
-                                                    <button type="button" class="button button-sm grey">HTML/CSS</button>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-skills-cell -->
-
-                                            <div class="candidate-location-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Location</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <p>Park Ave, NYC, USA</p>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-location-cell -->
-
-                                            <div class="candidate-edit-cell flex items-center no-wrap no-column no-wrap">
-                                                <i class="ion-ios-compose-outline edit-icon"></i>
-                                                <i class="ion-ios-trash-outline trash-icon"></i>
-                                                <i class="ion-ios-more-outline options-icon"></i>
-                                            </div> <!-- end .posted-job-edit-cell -->
-                                        </div> <!-- end .fav-candidate -->
-
-                                        <div class="divider"></div>
-
-                                        <div class="fav-candidate flex no-wrap no-column items-center list-unstyled">
-                                            <div class="candidate-name-cell candidate-cell flex items-center no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Name</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex items-center no-column no-wrap">
-                                                    <div class="candidate-img">
-                                                        <img src="static/zp/images/candidate-small03.jpg" alt="candidate-image" class="img-responsive">
-                                                    </div> <!-- end .candidate-img -->
-                                                    <div class="cell-text no-column">
-                                                        <h4>Tammy Dixon</h4>
-                                                        <p>Copywriter</p>
-                                                    </div> <!-- end .cell-text -->
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-name-cell -->
-
-                                            <div class="candidate-skills-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Skills</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <button type="button" class="button button-sm grey ">MS WORD</button>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-skills-cell -->
-
-                                            <div class="candidate-location-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Location</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <p>Park Ave, NYC, USA</p>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-location-cell -->
-
-                                            <div class="candidate-edit-cell flex items-center no-wrap no-column no-wrap">
-                                                <i class="ion-ios-compose-outline edit-icon"></i>
-                                                <i class="ion-ios-trash-outline trash-icon"></i>
-                                                <i class="ion-ios-more-outline options-icon"></i>
-                                            </div> <!-- end .posted-job-edit-cell -->
-                                        </div> <!-- end .fav-candidate -->
-
-                                        <div class="divider"></div>
-
-                                        <div class="fav-candidate flex no-wrap no-column items-center list-unstyled">
-                                            <div class="candidate-name-cell candidate-cell flex items-center no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Name</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex items-center no-column no-wrap">
-                                                    <div class="candidate-img">
-                                                        <img src="static/zp/images/candidate-small04.jpg" alt="candidate-image" class="img-responsive">
-                                                    </div> <!-- end .candidate-img -->
-                                                    <div class="cell-text no-column">
-                                                        <h4>Brandon Reynolds</h4>
-                                                        <p>Web Developer</p>
-                                                    </div> <!-- end .cell-text -->
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-name-cell -->
-
-                                            <div class="candidate-skills-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Skills</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <button type="button" class="button button-sm grey ">HTML/CSS</button>
-                                                    <button type="button" class="button button-sm grey">PHP</button>
-                                                    <button type="button" class="button button-sm grey">Jquery</button>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-skills-cell -->
-
-                                            <div class="candidate-location-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Location</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <p>Park Ave, NYC, USA</p>
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-location-cell -->
-
-                                            <div class="candidate-edit-cell flex items-center no-wrap no-column no-wrap">
-                                                <i class="ion-ios-compose-outline edit-icon"></i>
-                                                <i class="ion-ios-trash-outline trash-icon"></i>
-                                                <i class="ion-ios-more-outline options-icon"></i>
-                                            </div> <!-- end .posted-job-edit-cell -->
-                                        </div> <!-- end .fav-candidate -->
-
-                                        <div class="divider"></div>
-
-
-                                        <div class="fav-candidate flex no-wrap no-column items-center list-unstyled">
-                                            <div class="candidate-name-cell candidate-cell flex items-center no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Name</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex items-center no-column no-wrap">
-                                                    <div class="candidate-img">
-                                                        <img src="static/zp/images/candidate-small05.jpg" alt="candidate-image" class="img-responsive">
-                                                    </div> <!-- end .candidate-img -->
-                                                    <div class="cell-text no-column">
-                                                        <h4>Kathy Crawford</h4>
-                                                        <p>Graphic Designer</p>
-                                                    </div> <!-- end .cell-text -->
-                                                </div> <!-- end .candidate-cell-inner -->
-                                            </div> <!-- end .candidate-name-cell -->
-
-                                            <div class="candidate-skills-cell candidate-cell flex no-column no-wrap">
-                                                <div class="cell-mobile-label">
-                                                    <h6>Skills</h6>
-                                                </div> <!-- end .cell-label -->
-                                                <div class="candidate-cell-inner flex no-column no-wrap">
-                                                    <button type="button" class="button button-sm grey ">PS</button>
-                                                    <button type="button" class="button button-sm grey">AI</button>
+                                                    <button type="button" class="button button-sm grey ">推广</button>
                                                 </div> <!-- end .candidate-cell-inner -->
                                             </div> <!-- end .candidate-skills-cell -->
 
@@ -285,6 +102,7 @@
                                         <div class="divider"></div>
 
                                     </div> <!-- end .fav-candidates-wrapper -->
+                                        @endforeach
                                 </div> <!-- end .favorite-candidates-list-wrapper -->
 
                                 <div class="jobpress-custom-pager list-unstyled flex space-center no-column items-center">
@@ -1000,7 +818,7 @@
                                         </div> <!-- end .user-picture -->
                                         <div class="profile-meta">
                                             <h4 class="dark">{{$admin->login_name}}</h4>
-                                            <p>已入职</p>
+                                            <p>@if($admin->job_status) 已入职 @else 未入职 @endif</p>
                                             <div class="profile-contact flex items-center no-wrap no-column">
                                                 <h6 class="contact-phone">{{$admin->ipone}}</h6>
                                                 <h6 class="contact-email">{{$admin->email}}</h6>
@@ -1023,28 +841,6 @@
 
                                     <div class="divider"></div>
 
-                                    <div class="profile-experience-wrapper profile-section">
-                                        <h3 class="dark profile-title">Awards<span><i class="ion-edit"></i></span></h3>
-                                        <div class="profile-experience flex space-between no-wrap no-column">
-                                            <div class="profile-experience-left">
-                                                <h5 class="profile-designation dark">AWWWARDS</h5>
-                                                <h5 class="profile-company dark">Site of the month</h5>
-                                                <p class="small ultra-light">Aug 2016</p>
-                                                <p>Nulla molestie sed lorem non suscipit. Morbi imperdiet ex sit amet tortor faucibus ultricies. Fusce tincidunt elementum imperdiet.</p>
-                                                <h6 class="projects-count">http://banana.com</h6>
-                                            </div> <!-- end .profile-experience-left -->
-                                        </div> <!-- end .profile-experience -->
-                                        <div class="spacer-md"></div>
-                                        <div class="profile-experience flex space-between no-wrap no-column">
-                                            <div class="profile-experience-left">
-                                                <h5 class="profile-designation dark">Best css award</h5>
-                                                <h5 class="profile-company dark">Site of the day</h5>
-                                                <p class="small ultra-light">Aug 16th, 2016</p>
-                                                <p>Nulla molestie sed lorem non suscipit. Morbi imperdiet ex sit amet tortor faucibus ultricies. Fusce tincidunt elementum imperdiet.</p>
-                                                <h6 class="projects-count">http://banana.com</h6>
-                                            </div> <!-- end .profile-experience-left -->
-                                        </div> <!-- end .profile-experience -->
-                                    </div> <!-- end .profile-experience-wrapper -->
 
                                 </div> <!-- end .profile-wrapper -->
                             </div> <!-- end #profile-tab -->

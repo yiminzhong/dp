@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Member/MemberController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/member/myinfo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/member/layouts/header2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member/layouts/header2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/member/member.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/member/member.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/MemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Member/MemberController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/member/myinfo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member/myinfo.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +208,7 @@
       <workItem from="1593578782291" duration="348000" />
       <workItem from="1593579165793" duration="18593000" />
       <workItem from="1593759718415" duration="13303000" />
-      <workItem from="1593848927261" duration="894000" />
+      <workItem from="1593848927261" duration="2901000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -346,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593847038644</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="大唐招聘">
+      <created>1593850024461</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1593850024461</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

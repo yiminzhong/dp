@@ -22,6 +22,14 @@ class MemberController extends Controller
             return redirect('login')->with('warning', '暂未分权');;
         }
 
-        return $this->render('myinfo')->with('admin',$admin);
+
+        $my_menbers = Member::where('p_id',$admin->id) ->orderBy('id', 'desc');
+
+
+
+        $my_menbers_list = $my_menbers->paginate(10);
+
+
+        return $this->render('myinfo')->with('admin',$admin)->with('my_menbers_list',$my_menbers_list);
     }
 }
