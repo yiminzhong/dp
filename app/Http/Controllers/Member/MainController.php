@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Member;
 
 use App\Models\Admin\Admin;
+use App\Models\Admin\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Member\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -178,6 +179,7 @@ class MainController extends Controller
 
             if ($v) {
 
+                $recommend = request('recommend','');
                 $_token = request('_token','');
                 $name = request('name','');
                 $email = request('email','');
@@ -189,13 +191,21 @@ class MainController extends Controller
                     return redirect('registered')->with('warning', '注册失败，两次密码不一致！');
                 }
 
+                $p_id = 0;
+                if($recommend){
+                    $member = Member::where('votes',$recommend)->first();
+                    if ($member->id){
+                        $p_id = $member->id;
+                    }
+                }
+
                 $member = new Members();
                 $member->login_name = $name;
                 $member->email = $email;
                 $member->ipone =  $iphone;
-                $member->password = encrypt( $password);
+                $member->password = bcrypt( $password);
                 $member->status =  1;
-                $member->p_id =  0;
+                $member->p_id =  $p_id;
 
             if ($member->save()){
                 return redirect('login');

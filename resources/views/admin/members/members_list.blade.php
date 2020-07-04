@@ -95,7 +95,6 @@
                         console.log(data)
                         if (data.msg){
                             setTimeout(
-
                                 function () {
                                     var index = parent.layer.getFrameIndex(window.name);
                                     parent.$('.btn-refresh').click();

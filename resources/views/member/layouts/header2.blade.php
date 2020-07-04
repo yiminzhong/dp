@@ -38,11 +38,13 @@
                 <div class="navigation">
                     <nav class="main-nav">
                         <ul class="list-unstyled">
-                            <li class="active"><a href="">首页</a></li>
+                            <li class="active"><a href="/">首页</a></li>
                             <li><a href="about_us">关于我们</a></li>
                             <li><a href="about.html">担保免赔付招聘</a></li>
                             <li><a href="about.html">普通招聘</a></li>
                             <li><a href="about.html">骗子公告栏</a></li>
+                            <li><a href="about.html">发布信息</a></li>
+                            <li><a href="about.html">发布求职信息</a></li>
                             {{--                            <li class="menu-item-has-children">--}}
                             {{--                                <a href="candidates-listing.html">Candidates</a>--}}
                             {{--                                <ul>--}}

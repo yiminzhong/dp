@@ -43,6 +43,9 @@
         <form class="form form-horizontal" action="registered" method="post" id="form-reg">
             @csrf
             <div class="row clearfix">
+                <input type="recommend" class="input-text radius size-L" name="recommend" id="recommend" value="" placeholder="推荐码,责任码">
+            </div>
+            <div class="row clearfix">
                 <input type="name" class="input-text radius size-L" name="name" id="name" value="" placeholder="账户名称">
             </div>
             <div class="row clearfix">

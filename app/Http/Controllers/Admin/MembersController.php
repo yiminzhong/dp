@@ -23,57 +23,36 @@ class MembersController extends Controller
 
         $data['lists'] = $members_list;
 
-//        $data['tools'] = array(
-//            array('title' => '新增角色', 'href' => url(''))
-//        );
-//        $data['location'] = array(array('title' => '新增角色'));
-
         return $this->render('members/members_list')->with('admin',$admin)->with('members_list',$members_list);
-//        $s = array('status' => '', 'username' => '');
-//
-//        $status =request('status','-1');
-//        $username =request('username','');
-//
-//
-//        $oLog = AdminLogs::orderBy('id', 'desc');
-//
-//        if($status=='-1'){
-//
-//        }elseif ($status == 0 || $status == 1) {
-//            $oLog = $oLog->where('status', '=', $status);
-//            $s['status'] = $status;
-//        }
-//
-//        if ($username!='') {
-//            $oLog = $oLog->where('admin_name', '=', $username);
-//            $s['username'] = $username;
-//        }
-//
-//        $logs = $oLog->paginate(10);
-//
-//        $data['lists'] = $logs;
-//        $data['location'] = array(array('title' => '日志列表'));
-////        dd($data['lists']);
-//        return $this->render('log_index')->with('data', $data)->with('s', $s);
-
     }
 
     public function members_status($id){
+
         if (!$id || $id==0){
 
-            return json_encode(['msg'=>"角色不存在"]);
+            $response = [
+                'status'=>0,
+                'msg'=>"会员不存在",
+            ];
+
+            return json_encode($response);
         }
 
         $request = \request()->all();
 
         if (!isset($request['status']) || !$request['status']){
 
-            return json_encode(['msg'=>"意外操作 账户状态不正确"]);
+
+            $response = [
+                'status'=>0,
+                'msg'=>"意外操作 账户状态不正确",
+            ];
+
+            return json_encode($response);
 
         }
 
         if ($request['status'] == 'stop'){
-
             $status = 0;
         }else{
             $status = 1;
@@ -85,14 +64,26 @@ class MembersController extends Controller
 
         if ($change_status->status == $status){
 
-            return json_encode(['msg'=>"账户异常，请稍等操作"]);
+            $response = [
+                'status'=>0,
+                'msg'=>"意外操作 账户状态不正确",
+            ];
+
+            return json_encode($response);
+
 
         }
 
         $change_status->status = $status;
 
         if ($change_status->save()){
-            return json_encode(['msg'=>"操作完成"]);
+
+            $response = [
+                'status'=>1,
+                'msg'=>"操作完成",
+            ];
+
+            return json_encode($response);
         }
 
     }
