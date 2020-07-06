@@ -1,7 +1,5 @@
 @extends('member.layouts.header2')
-
 @section('content')
-
     <!-- Responsive Menu -->
     <div class="responsive-menu">
         <a href class="responsive-menu-close"><i class="ion-android-close"></i></a>
@@ -42,7 +40,7 @@
                             <li><a data-toggle="pill" href="#manage-applications-employer">Manage Applications</a></li>
                             <li class="nav-divider"></li>
                             <li><a data-toggle="pill" href="#change-password-employer">Change Password</a></li>
-                            <li><a data-toggle="pill" href="#signout-employer">Sign Out</a></li>
+                            <li><a  href="logout">退出</a></li>
                         </ul>
                     </div> <!-- end .left-sidebar-menu -->
 
@@ -52,7 +50,20 @@
                             <div id="favorite-candidates" class="tab-pane fade in ">
                                 <h3 class="tab-pane-title">我的推广</h3>
                                 <div class="favorite-candidates-list-wrapper">
+                                    @if(isset($admin->votes))
+                                    <div class="fav-candidates-wrapper">
 
+                                        <div class="fav-candidate flex no-wrap no-column items-center list-unstyled">
+                                            <div class="candidate-name-cell candidate-cell flex items-center no-column no-wrap">
+                                                推广注册码:<p style="color: red">{{$admin->votes}}</p>
+                                            </div> <!-- end .candidate-name-cell -->
+                                        </div> <!-- end .fav-candidate -->
+
+                                        <div class="divider"></div>
+
+                                    </div>
+                                    <!-- end .fav-candidates-wrapper -->
+                                    @endif
                                     <ul class="fav-candidates-table-headings flex items-center no-column list-unstyled">
                                         <li class="candidate-name-cell candidate-cell"><h6>account</h6></li>
                                         <li class="candidate-skills-cell candidate-cell"><h6>Skills</h6></li>
@@ -823,11 +834,12 @@
                                                 <h6 class="contact-phone">{{$admin->ipone}}</h6>
                                                 <h6 class="contact-email">{{$admin->email}}</h6>
                                             </div> <!-- end .profile-contact -->
-                                            <ul class="list-unstyled social-icons flex no-column">
-                                                <li><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                                                <li><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                                                <li><a href="#0"><i class="ion-social-instagram"></i></a></li>
-                                            </ul> <!-- end .social-icons -->
+{{--                                            <ul class="list-unstyled social-icons flex no-column">--}}
+{{--                                                <li><a href="#0"><i class="ion-social-twitter"></i></a></li>--}}
+{{--                                                <li><a href="#0"><i class="ion-social-facebook"></i></a></li>--}}
+{{--                                                <li><a href="#0"><i class="ion-social-instagram"></i></a></li>--}}
+{{--                                            </ul> --}}
+                                            <!-- end .social-icons -->
                                         </div> <!-- end .profile-meta -->
                                     </div> <!-- end .profile-info -->
 

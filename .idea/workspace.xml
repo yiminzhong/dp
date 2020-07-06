@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/MemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Member/MemberController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Member/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/member/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/member/myinfo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member/myinfo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/member/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member/register.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +212,12 @@
       <workItem from="1593578782291" duration="348000" />
       <workItem from="1593579165793" duration="18593000" />
       <workItem from="1593759718415" duration="13303000" />
-      <workItem from="1593848927261" duration="2901000" />
+      <workItem from="1593848927261" duration="3466000" />
+      <workItem from="1594005588407" duration="1196000" />
+      <workItem from="1594020063832" duration="1348000" />
+      <workItem from="1594024716233" duration="34000" />
+      <workItem from="1594024761485" duration="22000" />
+      <workItem from="1594024821070" duration="1889000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -350,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593850024461</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="大唐招聘">
+      <created>1593851978986</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1593851978986</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

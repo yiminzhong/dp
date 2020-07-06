@@ -53,6 +53,20 @@
                 <input type="password" class="input-text radius size-L" name="password" id="password" value="" placeholder="password">
             </div>
             <div class="row clearfix">
+                <img src="{{captcha_src()}}" style="cursor: pointer" onclick="this.src='{{captcha_src()}}'+Math.random()">
+
+                @if($errors->has('captcha'))
+                    <div class="col-md-12">
+                        <p class="text-danger text-left"><strong>{{$errors->first('captcha')}}</strong></p>
+                    </div>
+                @endif
+
+
+            </div>
+            <div class="row clearfix">
+                <input type="text" class="input-text radius size-L" name="captcha" id="captcha" value="" placeholder="输入验证码">
+            </div>
+            <div class="row clearfix">
                 <button class="btn btn-primary btn-block radius size-L">登 录</button>
             </div>
             <div class="row clearfix f-12">
@@ -76,6 +90,10 @@
                 name: {
                     required: true,
                     name: true,
+                },
+                captcha: {
+                    required: true,
+                    captcha: true,
                 },
                 password: {
                     required: true,

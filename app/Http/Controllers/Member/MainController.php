@@ -18,13 +18,14 @@ class MainController extends Controller
     public static $login_rules = array(
         'name' => 'required|alpha_dash|min:2',
         'password' => 'required|alpha_dash|between:4,45',
+        'captcha' => 'required|captcha',
     );
 
     protected function validateLogin(Request $request){
         $s = $this->validate($request, [
             'name' => 'required|alpha_dash|min:2',
             'password' => 'required|alpha_dash|between:4,45',
-//            'captcha' => 'required|captcha',
+            'captcha' => 'required|captcha',
         ],[
             'name.required' => trans('validation.required'),
             'member_user.alpha_dash' => trans('validation.alpha_dash'),
@@ -32,8 +33,8 @@ class MainController extends Controller
             'password.required' => trans('validation.required'),
             'password.alpha_dash' => trans('validation.alpha_dash'),
 //
-//            'captcha.required' => trans('validation.required'),
-//            'captcha.captcha' => trans('验证码错误'),
+            'captcha.required' => trans('validation.required'),
+            'captcha.captcha' => trans('验证码错误'),
 
         ]);
 
@@ -43,16 +44,21 @@ class MainController extends Controller
     protected function validateLogin2(Request $request){
         $s = $this->validate($request, [
             'name' => 'required|alpha_dash|min:2',
+            'nike_name' => 'required|alpha_dash|min:2',
             'password' => 'required|alpha_dash|between:4,45',
+            'captcha' => 'required|captcha',
         ],[
             'name.required' => trans('validation.required'),
             'name.alpha_dash' => trans('validation.alpha_dash'),
 
+            'nike_name.required' => trans('validation.required'),
+            'nike_name.alpha_dash' => trans('validation.alpha_dash'),
+
             'password.required' => trans('validation.required'),
             'password.alpha_dash' => trans('validation.alpha_dash'),
 
-//            'captcha.required' => trans('validation.required'),
-//            'captcha.captcha' => trans('验证码错误'),
+            'captcha.required' => trans('validation.required'),
+            'captcha.captcha' => trans('验证码错误'),
 
         ]);
 
@@ -99,16 +105,20 @@ class MainController extends Controller
                         return redirect('login')->with('warning', '登陆失败，账户处于禁用状态！');
                     }
 
+//                    if (!Hash::check(\request('password',''),$user->password)){
+//                        return redirect('login')->with('warning', '密码错误');
+//                    }
+
 //                    $iCostWorker = configure('web_pass_workers',10);
 //                    dd($iCostWorker);
 //                    $options = ['rounds' => $iCostWorker];
 //                    if (Hash::needsRehash($user['password'],$options)) {
 //                        $user->password = bcrypt(request('password'),$options);
 //                    }
-
-                    if (Hash::needsRehash($user['password'])) {
-                        $user->password = bcrypt(request('password'));
-                    }
+//
+//                    if (Hash::needsRehash($user['password'])) {
+//                        $user->password = bcrypt(request('password'));
+//                    }
 
                     $user->session_id=session()->getId();
                     $user->save();
@@ -182,6 +192,7 @@ class MainController extends Controller
                 $recommend = request('recommend','');
                 $_token = request('_token','');
                 $name = request('name','');
+                $nike_name = request('nike_name','');
                 $email = request('email','');
                 $iphone = request('iphone','');
                 $password = request('password','');
@@ -201,6 +212,7 @@ class MainController extends Controller
 
                 $member = new Members();
                 $member->login_name = $name;
+                $member->members_name = $nike_name;
                 $member->email = $email;
                 $member->ipone =  $iphone;
                 $member->password = bcrypt( $password);

@@ -43,10 +43,13 @@
         <form class="form form-horizontal" action="registered" method="post" id="form-reg">
             @csrf
             <div class="row clearfix">
-                <input type="recommend" class="input-text radius size-L" name="recommend" id="recommend" value="" placeholder="推荐码,责任码">
+                <input type="recommend" class="input-text radius size-L" name="recommend" id="recommend" value="" placeholder="注册码">
             </div>
             <div class="row clearfix">
                 <input type="name" class="input-text radius size-L" name="name" id="name" value="" placeholder="账户名称">
+            </div>
+            <div class="row clearfix">
+                <input type="nike_name" class="input-text radius size-L" name="nike_name" id="nike_name" value="" placeholder="昵称">
             </div>
             <div class="row clearfix">
                 <input type="email" class="input-text radius size-L" name="email" id="email" value="" placeholder="能收到邮件">
@@ -59,6 +62,20 @@
             </div>
             <div class="row clearfix">
                 <input type="password" class="input-text radius size-L" name="password2" id="password2" value="" placeholder="确认密码">
+            </div>
+            <div class="row clearfix">
+                <img src="{{captcha_src()}}" style="cursor: pointer" onclick="this.src='{{captcha_src()}}'+Math.random()">
+
+                @if($errors->has('captcha'))
+                    <div class="col-md-12">
+                        <p class="text-danger text-left"><strong>{{$errors->first('captcha')}}</strong></p>
+                    </div>
+                @endif
+
+
+            </div>
+            <div class="row clearfix">
+                <input type="text" class="input-text radius size-L" name="captcha" id="captcha" value="" placeholder="输入验证码">
             </div>
             <div class="row clearfix">
                 <button class="btn btn-primary btn-block radius size-L">注 册</button>
@@ -86,9 +103,17 @@
                     required: true,
                     name: true,
                 },
+                nike_name: {
+                    required: true,
+                    nike_name: true,
+                },
                 email: {
                     required: true,
                     email: true,
+                },
+                captcha: {
+                    required: true,
+                    captcha: true,
                 },
                 password: {
                     required: true,

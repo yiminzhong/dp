@@ -105,16 +105,18 @@ class MainController extends Controller
                         auth('admin')->logout();
                         return redirect('login')->with('warning', '登陆失败，账户处于禁用状态！');
                     }
+
+
 //                    $iCostWorker = configure('web_pass_workers',10);
 //                    dd($iCostWorker);
 //                    $options = ['rounds' => $iCostWorker];
 //                    if (Hash::needsRehash($user['password'],$options)) {
 //                        $user->password = bcrypt(request('password'),$options);
 //                    }
-
-                    if (Hash::needsRehash($user['password'])) {
-                        $user->password = bcrypt(request('password'));
-                    }
+//
+//                    if (Hash::needsRehash($user['password'])) {
+//                        $user->password = bcrypt(request('password'));
+//                    }
 
                     $user->session_id=session()->getId();
                     $user->save();
