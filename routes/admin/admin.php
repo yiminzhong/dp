@@ -50,5 +50,9 @@ Route::group(array('middleware' => ['auth:admin']), function () {
         Route::any('members_info/{id}', array('as' => 'MembersController@members_info', 'uses' => 'MembersController@members_info') );
 
 
+        //职位列表OfficeController
+
+        Route::any('office_list', array('as' => 'OfficeController@list', 'uses' => 'OfficeController@list') );
+
     });
 });

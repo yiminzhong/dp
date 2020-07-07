@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OfficeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/officeer/office_list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/admin/acl.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/admin/acl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/admin.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,23 +138,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Member" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/Officeer" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Member" />
-      <recent name="$PROJECT_DIR$/resources/views/member" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/members" />
-      <recent name="$PROJECT_DIR$/app/Models/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/member/static/H-ui.ucenter" />
       <recent name="$PROJECT_DIR$/public/member/static" />
       <recent name="$PROJECT_DIR$/public/member/static/static" />
       <recent name="$PROJECT_DIR$/resources/static" />
       <recent name="$PROJECT_DIR$/resources/zp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/Officeer" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Member" />
+      <recent name="$PROJECT_DIR$/resources/views/member" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/members" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -211,7 +215,7 @@
       <workItem from="1594020063832" duration="1348000" />
       <workItem from="1594024716233" duration="34000" />
       <workItem from="1594024761485" duration="22000" />
-      <workItem from="1594024821070" duration="2894000" />
+      <workItem from="1594024821070" duration="4557000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -367,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594027941937</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="大唐招聘">
+      <created>1594030703496</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1594030703496</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

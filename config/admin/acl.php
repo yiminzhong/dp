@@ -2,6 +2,26 @@
 return [
     'privileges' =>[
         [
+            'title' => '资讯管理',
+            'icon' => '&#xe616;',
+            'icon2' => "&#xe6d5;",
+            'number' => 1,
+            'class' => 'fa fa-desktop green',
+            'child' => [
+                [
+                    'title' => '招聘职位',
+                    'action' => 'OfficeController@list',
+                    'url' => 'office_list',
+                    'number' => 40,
+                    'child' => [
+
+                    ]
+                ],
+
+
+            ]
+        ],
+        [
             'title' => '会员管理',
             'icon' => '&#xe60d;',
             'icon2' => "&#xe6d5;",
