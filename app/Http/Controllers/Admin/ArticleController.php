@@ -9,30 +9,30 @@ use App\Models\Admin;
 use App\Models\Admin\Identity;
 use Illuminate\Support\Facades\DB;
 
-class OfficeController extends Controller
+class ArticleController extends Controller
 {
     public function list(){
 
         $admin = $this->getCurrentUser();
 
-        $posts_list = $oLog = Admin\Posts::orderBy('id', 'desc');
+        $article_list = $oLog = Admin\Article::orderBy('id', 'desc');
 
-        $posts_list = $posts_list->paginate(10);
+        $article_list = $article_list->paginate(10);
 
-        $data['lists'] = $posts_list;
+        $data['lists'] = $article_list;
 
         $data['tools'] = array(
             array('title' => '新增角色', 'href' => url(''))
         );
         $data['location'] = array(array('title' => '新增招聘启事'));
 
-        return $this->render('officeer/office_list')->with('admin',$admin)->with('posts_list',$posts_list);
+        return $this->render('article/article_list')->with('admin',$admin)->with('article_list',$article_list);
     }
 
 
     public function add($id=0){
         if (!$id || $id==0){
-            return self::notice("会话不存在", 2, array(array('title' => '职位管理', 'url' => url('officeer/office_list'))));
+            return self::notice("会话不存在", 2, array(array('title' => '职位管理', 'url' => url('article/article_list'))));
         }
         $admin = $this->getCurrentUser();
 
@@ -63,7 +63,7 @@ class OfficeController extends Controller
 
 
         }
-        return $this->render('officeer/office_add')->with('admin',$admin);
+        return $this->render('article/article_add')->with('admin',$admin);
     }
 
     public function edit($id){

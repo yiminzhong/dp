@@ -53,6 +53,12 @@ Route::group(array('middleware' => ['auth:admin']), function () {
         //职位列表OfficeController
 
         Route::any('office_list', array('as' => 'OfficeController@list', 'uses' => 'OfficeController@list') );
+        Route::any('office_add/{id}', array('as' => 'OfficeController@add', 'uses' => 'OfficeController@add') );
+        Route::any('office_edit/{id}', array('as' => 'OfficeController@edit', 'uses' => 'OfficeController@edit') );
+
+
+        Route::any('article_list', array('as' => 'ArticleController@list', 'uses' => 'ArticleController@list') );
+        Route::any('article_add/{id}', array('as' => 'ArticleController@add', 'uses' => 'ArticleController@add') );
 
     });
 });

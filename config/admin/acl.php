@@ -9,10 +9,19 @@ return [
             'class' => 'fa fa-desktop green',
             'child' => [
                 [
-                    'title' => '招聘职位',
+                    'title' => '职位管理',
                     'action' => 'OfficeController@list',
                     'url' => 'office_list',
                     'number' => 40,
+                    'child' => [
+
+                    ]
+                ],
+                [
+                    'title' => '招聘职位',
+                    'action' => 'ArticleController@list',
+                    'url' => 'article_list',
+                    'number' => 41,
                     'child' => [
 
                     ]
