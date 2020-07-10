@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Admin/Article.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Admin/Posts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_07_095813_create_posts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_080607_create_articles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/article/article_add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/article/article_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/article/office_edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/officeer/office_add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/officeer/office_edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OfficeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OfficeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/admin/acl.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/admin/acl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/officeer/office_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/officeer/office_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/article/article_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/article/article_add.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +214,8 @@
       <workItem from="1594024716233" duration="34000" />
       <workItem from="1594024761485" duration="22000" />
       <workItem from="1594024821070" duration="9783000" />
-      <workItem from="1594191896482" duration="3896000" />
+      <workItem from="1594191896482" duration="4024000" />
+      <workItem from="1594281863157" duration="1163000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -396,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594115367827</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="大唐招聘">
+      <created>1594205553679</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1594205553679</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -37,6 +37,7 @@ class ArticleController extends Controller
         $admin = $this->getCurrentUser();
 
 
+
         if (request()->isMethod('post')) {
 
             $requestlist = \request()->all();
