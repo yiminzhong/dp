@@ -31,16 +31,23 @@ class ArticleController extends Controller
 
 
     public function add($id=0){
+
         if (!$id || $id==0){
             return self::notice("会话不存在", 2, array(array('title' => '职位管理', 'url' => url('article/article_list'))));
         }
+
         $admin = $this->getCurrentUser();
 
+        //获取职位
+
+        $posts = Admin\Posts::get();
 
 
         if (request()->isMethod('post')) {
 
             $requestlist = \request()->all();
+
+
 
             if (!isset($requestlist['post']) || !$requestlist['post']){
                 return ['ok'=>2,'msg'=>"角色名称不能为空"];
@@ -64,7 +71,9 @@ class ArticleController extends Controller
 
 
         }
-        return $this->render('article/article_add')->with('admin',$admin);
+
+
+        return $this->render('article/article_add')->with('admin',$admin)->with('posts',$posts);
     }
 
     public function edit($id){
