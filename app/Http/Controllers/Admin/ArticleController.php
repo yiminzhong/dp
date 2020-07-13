@@ -48,7 +48,7 @@ class ArticleController extends Controller
             $requestlist = \request()->all();
 
 
-
+            dd($requestlist);
             if (!isset($requestlist['post']) || !$requestlist['post']){
                 return ['ok'=>2,'msg'=>"角色名称不能为空"];
             }

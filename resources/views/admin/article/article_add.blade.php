@@ -4,18 +4,14 @@
     <link href="{{asset('static/lib/webuploader/0.1.5/webuploader.css')}}" rel="stylesheet" type="text/css" />
     <div class="page-container">
         <form action="" method="post" class="form form-horizontal" id="form-article-add">
+            @csrf
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品标题：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                    <input type="text" class="input-text" value="" placeholder="" id="title" name="title">
                 </div>
             </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">简略标题：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" placeholder="" id="" name="">
-                </div>
-            </div>
+
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
                 <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
@@ -34,86 +30,7 @@
                     <input type="text" class="input-text" value="0" placeholder="" id="" name="">
                 </div>
             </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">允许评论：</label>
-                <div class="formControls col-xs-8 col-sm-9 skin-minimal">
-                    <div class="check-box">
-                        <input type="checkbox" id="checkbox-1">
-                        <label for="checkbox-1">&nbsp;</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">产品规格：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="输入长度" value="" class="input-text" style=" width:25%">
-                    MM
-                    <input type="text" name="" id="" placeholder="输入宽度" value="" class="input-text" style=" width:25%">
-                    MM
-                    <input type="text" name="" id="" placeholder="输入高度" value="" class="input-text" style=" width:25%">
-                    MM </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">产地：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text">
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">材质：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text">
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">所属供应商：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text">
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">价格计算单位：</label>
-                <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select class="select">
-					<option>请选择</option>
-					<option value="1">件</option>
-					<option value="2">斤</option>
-					<option value="3">KG</option>
-					<option value="4">吨</option>
-					<option value="5">套</option>
-				</select>
-				</span> </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">产品重量：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-                    kg</div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">产品展示价格：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-                    元</div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">市场价格：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-                    元</div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">成本价格：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-                    元</div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">最低销售价格：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-                    元</div>
-            </div>
+
 
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">产品关键字：</label>
@@ -128,16 +45,7 @@
 
                 </div>
             </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">缩略图：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <div class="uploader-thum-container">
-                        <div id="fileList" class="uploader-list"></div>
-                        <div id="filePicker">选择图片</div>
-                        <button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>
-                    </div>
-                </div>
-            </div>
+
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
                 <div class="formControls col-xs-8 col-sm-9">
@@ -220,10 +128,10 @@
 
                 var uploader = WebUploader.create({
                     auto: true,
-                    swf: 'static/lib/webuploader/0.1.5/Uploader.swf',
+                    swf: '/static/lib/webuploader/0.1.5/Uploader.swf',
 
                     // 文件接收服务端。
-                    server: 'static/lib/webuploader/0.1.5/server/fileupload.php',
+                    server: '/static/lib/webuploader/0.1.5/server/fileupload.php',
 
                     // 选择文件的按钮。可选。
                     // 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -467,7 +375,7 @@
                     swf: 'static/lib/webuploader/0.1.5/Uploader.swf',
                     chunked: false,
                     chunkSize: 512 * 1024,
-                    server: 'static/lib/webuploader/0.1.5/server/fileupload.php',
+                    server: '/static/lib/webuploader/0.1.5/server/fileupload.php',
                     // runtimeOrder: 'flash',
 
                     // accept: {
@@ -891,6 +799,11 @@
         $(function(){
             var ue = UE.getEditor('editor');
         });
+        
+        
+        function article_save_submit() {
+            
+        }
     </script>
 
 

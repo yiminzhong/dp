@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/admin/static/lib/ueditor/ueditor.all.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/Uploader.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/Uploader.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/ueditor.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/ueditor.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/ueditor/1.4.3/php/Uploader.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/ueditor/1.4.3/php/Uploader.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/article/article_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/article/article_add.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -224,6 +219,8 @@
       <workItem from="1594281863157" duration="1163000" />
       <workItem from="1594372783281" duration="801000" />
       <workItem from="1594524397597" duration="8720000" />
+      <workItem from="1594546750019" duration="585000" />
+      <workItem from="1594616843055" duration="1636000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -407,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594372895380</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="大唐招聘">
+      <created>1594546825899</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1594546825899</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
