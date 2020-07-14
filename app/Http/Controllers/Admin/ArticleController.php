@@ -15,7 +15,8 @@ class ArticleController extends Controller
 
         $admin = $this->getCurrentUser();
 
-        $article_list = $oLog = Admin\Article::orderBy('id', 'desc');
+        $article_list =DB::table('articles')
+            ->leftJoin('posts', 'articles.posts_id', '=', 'posts.id')->orderBy('articles.id', 'desc');
 
         $article_list = $article_list->paginate(10);
 
@@ -47,22 +48,24 @@ class ArticleController extends Controller
 
             $requestlist = \request()->all();
 
+            $title = $requestlist['title'];
+            $posts_id = $requestlist['posts'];
+            $local = $requestlist['local'];
+            $sort = $requestlist['sort'];
+            $Keyword = $requestlist['Keyword'];
+            $description = $requestlist['description'];
+            $editorValue = $requestlist['editorValue'];
 
-            dd($requestlist);
-            if (!isset($requestlist['post']) || !$requestlist['post']){
-                return ['ok'=>2,'msg'=>"角色名称不能为空"];
-            }
+            $role = new Admin\Article();
+            $role->posts_id = $posts_id;
+            $role->sort = $sort;
+            $role->local = $local;
+            $role->title = $title;
+            $role->content = $description;
 
-
-            $posts_name = Admin\Posts::where('posts_name',$requestlist['post'])->first();
-            if ($posts_name){
-                return ['ok'=>2,'msg'=>"职位已存在"];
-            }
-
-            $role = new Admin\Posts();
-            $role->posts_name = $requestlist['post'];
-            $role->description = isset($requestlist['remark'])?$requestlist['remark']:'';
-            $role->creat_name = $admin->name;
+            $role->company = $editorValue;
+            $role->create_id = $admin->id;
+            $role->create_name = $admin->name;
             if ($role->save()){
                 return ['ok'=>1,'msg'=>"职位新增成功"];
             }else{

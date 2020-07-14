@@ -1,22 +1,22 @@
 @extends('admin.layouts.header')
 
 @section('content')
+
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 资讯管理 <span class="c-gray en">&gt;</span> 招聘职位 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
     <div class="page-container">
         <div class="cl pd-5 bg-1 bk-gray"> <span class="l">
                 <a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('添加职位','article_add/{{$admin->id}}','800')"><i class="Hui-iconfont">&#xe600;</i> 发布招聘</a> </span> <span class="r">共有数据：<strong>{!! $article_list->total() !!} </strong> 条</span> </div>
-        <table class="table table-border table-bordered table-hover table-bg">
+        <table class="table table-border table-bordered table-hover table-bg" style="table-layout:fixed;word-break:break-all;">
             <thead>
             <tr>
-                <th scope="col" colspan="8">职位管理</th>
+                <th scope="col" colspan="6">职位管理</th>
             </tr>
             <tr class="text-c">
                 <th width="40">ID</th>
                 <th width="200">职位id</th>
                 <th width="200">职位名称</th>
                 <th width="200">职位描述</th>
-                <th width="200">工作地址</th>
-                <th width="200">工作环境</th>
+{{--                <th width="200">公司简介</th>--}}
                 <th width="200">创建人</th>
                 <th width="70">操作</th>
             </tr>
@@ -25,11 +25,10 @@
             @foreach($article_list as $k=>$v)
                 <tr class="text-c">
                     <td>{{$v->id}}</td>
-                    <td>{{$v->posts_id}}</td>
+                    <td>{{$v->local}}</td>
                     <td>{{$v->title}}</td>
                     <td>{{$v->content}}</td>
-                    <td>{{$v->content}}</td>
-                    <td>{{$v->content}}</td>
+{{--                    <td>{!! $v->company !!}</td>--}}
                     <td>{{$v->creat_name}}</td>
                     <td class="f-14">
 

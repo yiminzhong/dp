@@ -94,7 +94,7 @@ $chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
 // Remove old temp files
 if ($cleanupTargetDir) {
     if (!is_dir($targetDir) || !$dir = opendir($targetDir)) {
-        die('{"jsonrpc" : "2.0", "error" : {"code": 100, "message": "Failed to open temp directory."}, "id" : "id"}');
+        die('{"jsonrpc" : "2.0", "error" : {"code": 1200, "message": "Failed to open temp directory."}, "id" : "id"}');
     }
 
     while (($file = readdir($dir)) !== false) {

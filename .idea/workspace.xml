@@ -4,8 +4,18 @@
     <list default="true" id="fb33dffd-296d-44c1-88f8-9fb5bcd3431b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/Uploader.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3/php/Uploader.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_08_080607_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_080607_create_articles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/static/lib/webuploader/0.1.5/server/fileupload.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/webuploader/0.1.5/server/fileupload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/static/lib/webuploader/0.1.5/server/fileupload2.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/webuploader/0.1.5/server/fileupload2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/static/lib/webuploader/0.1.5/server/preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/static/lib/webuploader/0.1.5/server/preview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/webuploader/0.1.5/server/fileupload.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/webuploader/0.1.5/server/fileupload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/webuploader/0.1.5/server/fileupload2.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/webuploader/0.1.5/server/fileupload2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/webuploader/0.1.5/server/preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/member/static/H-ui.ucenter/lib/webuploader/0.1.5/server/preview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/member/static/lib/webuploader/0.1.5/server/fileupload.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/member/static/lib/webuploader/0.1.5/server/fileupload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/member/static/lib/webuploader/0.1.5/server/fileupload2.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/member/static/lib/webuploader/0.1.5/server/fileupload2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/member/static/lib/webuploader/0.1.5/server/preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/member/static/lib/webuploader/0.1.5/server/preview.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/article/article_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/article/article_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/article/article_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/article/article_list.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,23 +147,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/article" />
-      <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/app/Models/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3" />
       <recent name="$PROJECT_DIR$/public/admin/static/lib/ueditor" />
       <recent name="$PROJECT_DIR$/包" />
       <recent name="$PROJECT_DIR$/public/member/static/H-ui.ucenter" />
       <recent name="$PROJECT_DIR$/public/member/static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage" />
+      <recent name="$PROJECT_DIR$/public/admin/static/lib/ueditor/1.4.3" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/article" />
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/app/Models/Admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -221,6 +231,8 @@
       <workItem from="1594524397597" duration="8720000" />
       <workItem from="1594546750019" duration="585000" />
       <workItem from="1594616843055" duration="1636000" />
+      <workItem from="1594634639321" duration="437000" />
+      <workItem from="1594695806358" duration="8996000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1579092816615</created>
@@ -411,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594546825899</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="大唐招聘">
+      <created>1594634655171</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1594634655171</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
