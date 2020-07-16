@@ -48,7 +48,7 @@ class ArticleController extends Controller
 
             $requestlist = \request()->all();
 
-            dd($requestlist,$_FILES,$_POST);
+          
 
             $title = $requestlist['title'];
             $posts_id = $requestlist['posts'];
