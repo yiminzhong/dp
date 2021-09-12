@@ -44,6 +44,7 @@ class MainController extends Controller
     public function login(){
 
         if (auth('admin')->check()){
+            auth('admin')->logout();
             return redirect('');
         }
 
@@ -78,6 +79,7 @@ class MainController extends Controller
 //                    return redirect('login')->with('warning', '登陆失败！');
 //                }
                 if(!$tryuser->google){
+                    
                     return redirect('login')->with('warning', '登陆失败！');
                 }
 
