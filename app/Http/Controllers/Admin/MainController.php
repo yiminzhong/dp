@@ -42,9 +42,9 @@ class MainController extends Controller
     );
 
     public function login(){
-
+       
         if (auth('admin')->check()){
-            auth('admin')->logout();
+            
             return redirect('');
         }
 
@@ -130,7 +130,7 @@ class MainController extends Controller
 //                    }catch (\Exception $e){
 //                        logger()->error($e);
 //                    }
-
+                    
                     return redirect('');
                 }
 //
@@ -148,8 +148,8 @@ class MainController extends Controller
             }
 
         }
-
-        return $this->Render('login');
+      
+        return $this->render('login');
     }
     /**
      * 提示页面 跳转中转页面
