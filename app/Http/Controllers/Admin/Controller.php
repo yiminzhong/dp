@@ -30,7 +30,6 @@ abstract class Controller extends BaseController {
         return $this->user;
     }
 
-
     /**
      * 跳转到提示页
      * @param string $msg

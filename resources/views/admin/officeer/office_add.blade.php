@@ -16,11 +16,26 @@
                     <input type="text" class="input-text" value="" placeholder="描述" id="remark" name="remark">
                 </div>
             </div>
-            <div class="row cl">
+            {{-- <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3">级别：</label>
                 <div class="formControls col-xs-8 col-sm-9">
                     <input type="text" class="input-text" value="" placeholder="描述" id="grade" name="grade">
                 </div>
+            </div> --}}
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>级别：</label>
+                <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+
+				<select name="grade" class="select">
+                  <option value="0">请选择发布的职位</option>
+
+                    @foreach($g as $k =>$v)
+
+					<option value="{{ $v}}">{{$v}}</option>
+                    @endforeach
+
+				</select>
+				</span> </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3">招聘人数：</label>
@@ -28,11 +43,21 @@
                     <input type="text" class="input-text" value="" placeholder="描述" id="number" name="number">
                 </div>
             </div>
+
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3">职位状态：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" placeholder="描述" id="status" name="status">
-                </div>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>职位状态：</label>
+                <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+
+				<select name="status" class="select">
+                  <option value="0">职位发布状态</option>
+
+                    @foreach($s as $k =>$v)
+
+					<option value="{{ $v}}">{{$v}}</option>
+                    @endforeach
+
+				</select>
+				</span> </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">

@@ -26,8 +26,11 @@
 
                                     </dt>
                                     <dd>
-                                        @if(isset($b['child']))
+
+                                        @if(isset($b['child']) && !empty($b['child']))
+
                                             @foreach($b['child'] as $c=>$d)
+
                                                 <label class="">
                                                     <input type="checkbox" value="{{$d['action']}}" @if(in_array("*",$checked) && count($checked) == 1) checked disabled @elseif(in_array($b['action'],$checked)) checked @endif name="title[]" id="title[]">
                                                     {{$d['title']}}</label>

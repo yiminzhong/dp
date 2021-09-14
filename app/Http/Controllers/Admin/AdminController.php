@@ -44,7 +44,7 @@ class AdminController extends Controller
         $google = $google2fa->generateSecretKey();
 
         $google2fa_url = $google2fa->getQRCodeUrl(
-            '财务管理',
+            '管理员',
             '',
             $google
         );
@@ -56,8 +56,8 @@ class AdminController extends Controller
 
             $request = \request()->all();
             $admin2 = new Admin();
-            $admin2->name = $request['adminName'];
-            $admin2->nike_name = $request['adminName2'];
+            $admin2->name = $request['adminAccount'];
+            $admin2->nike_name = $request['adminName'];
             $admin2->password = bcrypt('123qwe');
             $admin2->google = $request['adminGoogle'];
             $admin2->email = Str::random(10).'@gmail.com';
@@ -72,8 +72,9 @@ class AdminController extends Controller
             }
 
         }
-        return $this->render('admin_add')->with('google2fa_url', $google2fa_url)->with('google', $google);
-
+        return $this->render('admin_add')->with('google2fa_url', $google2fa_url)
+        ->with('google', 'W7C52VAJFGHJGM6B');
+        // ->with('google', $google);
     }
 
 

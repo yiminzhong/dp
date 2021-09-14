@@ -18,14 +18,14 @@ class MainController extends Controller
         $adminId    = $admin->id;
 
         $menus      = $admin->getPrivilegeMenus();
-
+        
         if (empty($menus)){
             auth('admin')->logout();
-            return redirect('login')->with('warning', '暂未分权');;
+            return redirect('login')->with('warning', '暂未分权1');;
         }
 
         $live=[];
-
+        // dd($menus);
         return $this->render('index')->with('admin', $admin)->with('menus', $menus)
 //            ->with('uid', $adminId)
 //
@@ -42,9 +42,9 @@ class MainController extends Controller
     );
 
     public function login(){
-       
+
         if (auth('admin')->check()){
-            
+
             return redirect('');
         }
 
@@ -79,15 +79,15 @@ class MainController extends Controller
 //                    return redirect('login')->with('warning', '登陆失败！');
 //                }
                 if(!$tryuser->google){
-                    
-                    return redirect('login')->with('warning', '登陆失败！');
+
+                    return redirect('login')->with('warning', '登陆失败google！');
                 }
 
                 $google2fa = new Google2FA();
                 $google_password = request('google_password','');
 
                 if(!$google_password || !$google2fa->verifyKey($tryuser->google, $google_password) ){
-                    return redirect('login')->with('warning', '登陆失败！');
+                    return redirect('login')->with('warning', '登陆失败google2！');
                 }
 //                $len=3;
 //                if(strlen($username)<=$len){
@@ -130,7 +130,7 @@ class MainController extends Controller
 //                    }catch (\Exception $e){
 //                        logger()->error($e);
 //                    }
-                    
+
                     return redirect('');
                 }
 //
@@ -148,7 +148,7 @@ class MainController extends Controller
             }
 
         }
-      
+
         return $this->render('login');
     }
     /**

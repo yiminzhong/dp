@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\DB;
 
 class OfficeController extends Controller
 {
+
+    static private  $G = [
+        "普通","中级","优先"
+    ];
+
+    static private  $S = [
+        "停止招聘","进行中"
+    ];
     public function list(){
 
         $admin = $this->getCurrentUser();
@@ -31,27 +39,28 @@ class OfficeController extends Controller
 
 
     public function add($id=0){
+ 
         if (!$id || $id==0){
             return self::notice("会话不存在", 2, array(array('title' => '职位管理', 'url' => url('officeer/office_list'))));
         }
         $admin = $this->getCurrentUser();
 
-   
+
         if (request()->isMethod('post')) {
 
             $requestlist = \request()->all();
-          
+
             if (!isset($requestlist['post']) || !$requestlist['post']){
                 return ['ok'=>2,'msg'=>"角色名称不能为空"];
-                
+
             }
-           
+
 
             // $posts_name = Admin\Posts::where('posts_name',$requestlist['post'])->first();
             // if ($posts_name){
             //     return ['ok'=>2,'msg'=>"职位已存在"];
             // }
-       
+
             $role = new Admin\Posts();
             $role->posts_name = $requestlist['post'];
             $role->description = isset($requestlist['remark'])?$requestlist['remark']:'';
@@ -67,7 +76,9 @@ class OfficeController extends Controller
 
 
         }
-        return $this->render('officeer/office_add')->with('admin',$admin);
+        $g =self::$G;
+        $s =self::$S;
+        return $this->render('officeer/office_add')->with('admin',$admin)->with("g",$g)->with("s",$s);
     }
 
     public function edit($id){

@@ -8,7 +8,7 @@
         <table class="table table-border table-bordered table-hover table-bg">
             <thead>
             <tr>
-                <th scope="col" colspan="9">职位管理</th>
+                <th scope="col" colspan="10">职位管理</th>
             </tr>
             <tr class="text-c">
                 <th width="40">ID</th>
@@ -58,7 +58,7 @@
     <script type="text/javascript">
         /*管理员-角色-添加*/
         function admin_role_add(title,url,w,h){
-       
+
             layer_show(title,url,w,h);
         }
         /*管理员-角色-编辑*/

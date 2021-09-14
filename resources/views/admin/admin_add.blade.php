@@ -4,15 +4,15 @@
     <article class="page-container">
         <form class="form form-horizontal" id="form-admin-add" >
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员账户：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" placeholder="字母账户" id="adminName" name="adminName">
+                    <input type="text" class="input-text" value="" placeholder="字母账户" id="adminAccount" name="adminAccount">
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>名称：</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" placeholder="名称" id="adminName2" name="adminName2">
+                    <input type="text" class="input-text" value="" placeholder="名称" id="adminName" name="adminName">
                 </div>
             </div>
             <div class="row cl">

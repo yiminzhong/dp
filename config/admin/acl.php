@@ -23,7 +23,12 @@ return [
                     'url' => 'article_list',
                     'number' => 41,
                     'child' => [
-
+                            [
+                                'title' => '发布招聘',
+                                'action' => 'ArticleController@add',
+                                'url' => 'article_add',
+                                'number' => 41,
+                            ]
                     ]
                 ],
 

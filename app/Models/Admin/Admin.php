@@ -59,7 +59,6 @@ class Admin extends Authenticatable
 
         $allows = $this->getPrivileges();
 
-
         if (in_array("*", $allows) && count($allows) == 1){
 
             return $privileges;
@@ -70,44 +69,55 @@ class Admin extends Authenticatable
                 return [];
             }
 
+
 //            $filtered = Arr::where($privileges, function ($value, $key) use ($allows) {
 //
 //            });
-
+            // dd($privileges);
             foreach ($privileges as $k=> $v){
+                //初始化数组
 
-
-                foreach ($v['child'] as $ck=>$cv){
-
-                    if (empty($cv['child'])){
-                        unset($privileges[$k]['child'][$ck]);
-                    }
-
-                    if (!in_array($cv['action'],$allows)){
-
-                        unset($privileges[$k]['child'][$ck]);
-
-                    }
-
-                    if (isset($cv['child'])){
-                        foreach ($cv['child'] as $a=>$b){
-                            if (!in_array($b['action'],$allows)){
-
-                                unset($privileges[$k]['child'][$ck]['child'][$a]);
-
-                            }
-                        }
-                    }
-
-                }
-
-
-                if (empty($privileges[$k]['child'])){
+                if(empty($v)){
                     unset($privileges[$k]);
                 }
 
+                if(empty($v['child'])){
+                    unset($privileges[$k]);
+                }
+
+                foreach($v['child'] as $ck=>$cv){
+
+                     if (!in_array($cv['action'],$allows)){
+
+                        unset($privileges[$k]['child'][$ck]);
+
+                    }
+
+                    if(isset($cv['child'])){
+
+                    foreach($cv['child'] as $ck1=>$cv1){
+
+                        if (!in_array($cv1['action'],$allows)){
+
+                           unset($cv['child'][$ck1]);
+
+                            }
+
+                        }
+                    }
 
 
+                }
+
+            }
+
+
+            //二次处理数组
+
+            foreach($privileges as $k => $v){
+                if(empty($v['child'])){
+                    unset($privileges[$k]);
+                }
             }
 
             return $privileges;
